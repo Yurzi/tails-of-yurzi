@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-go-template": "^0.0.15"
+  },
+  "name": "tailsofyurzi",
+  "description": "<h1 align=center><img src=\"static/icon.png\" alt=\"\" aria-label=\"logo\" height=\"35\"> Tails of Yurzi</h1>",
+  "version": "1.0.0",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yurzi/tails-of-yurzi.git"
+  },
+  "keywords": [
+    "blog",
+    "hugo",
+    "yurzi",
+    "lily"
+  ],
+  "author": [
+    "Yurzi",
+    "Lily"
+  ],
+  "license": "Private",
+  "bugs": {
+    "url": "https://github.com/yurzi/tails-of-yurzi/issues"
+  },
+  "homepage": "https://github.com/yurzi/tails-of-yurzi#readme"
+}

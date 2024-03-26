@@ -138,7 +138,7 @@ params:
   ShowToc: true
   tocopen: true
   comments: true
-  images: ["images/papermod-cover.png"]
+  images: ["cover.png"]
 
 
   socialIcons:

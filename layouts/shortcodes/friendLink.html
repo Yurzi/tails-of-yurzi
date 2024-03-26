@@ -1,0 +1,9 @@
+{{- if .IsNamedParams -}}
+  <div role="link" class="friend-wrapper" aria-label="friend link card" onclick="location={{- .Get "url" | safeURL -}}">
+    <img class="friend-logo" aria-label="friend link logo" src="{{ .Get "logo" }}" alt="logo" />
+    <div class="friend-text-wrapper" aria-hidden="true">
+      <div role="textbox" class="friend-text-title" aria-label="friend link title">{{ .Get "title" }}</div>
+      <div class="friend-text-word" aria-label="friend link description">{{ .Get "word" }}</div>
+    </div>
+  </div>
+{{- end }}

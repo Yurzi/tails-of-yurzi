@@ -8,6 +8,11 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
   --nav-width: 1380px;
   --article-width: 650px;
   --toc-width: 300px;
+  --box-shodow: #DBDBDB;
+}
+
+.dark {
+  --box-shodow: #F7F7F7;
 }
 
 .toc {
@@ -90,4 +95,58 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 
 .toc li a:hover {
   color: var(--secondary);
+}
+
+.post-entry:hover {
+  background: var(--code-bg);
+}
+
+.friend-wrapper {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  width: 45%;
+  background: var(--entry);
+  border-radius: var(--radius);
+  /*box-shadow: 5px 5px 16px 0px var(--box-shodow);*/
+}
+
+@media screen and (max-width: 600px) {
+  .friend-wrapper {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.friend-wrapper:hover {
+  background: var(--code-bg);
+}
+
+.friend-logo {
+  height: 56px;
+  width: 56px;
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.friend-text-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 2px;
+  margin: 16px 0px 16px 0px;
+}
+
+.friend-text-title {
+  flex: 1;
+  text-overflow: ellipsis;
+  color: var(--primary);
+}
+
+.friend-text-word {
+  flex: 1;
+  text-overflow: ellipsis;
+  color: var(--secondary);
+  font-size: 70%;
+}
 }
