@@ -6,3 +6,10 @@ comments: false
 showtoc: false
 layout: special
 ---
+
+{{< authorCard name="Yurzi" avatar="/icon.png" content=`
+
+### qwqwq
+
+dasddasd
+`>}}

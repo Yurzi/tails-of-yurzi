@@ -149,4 +149,53 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
   color: var(--secondary);
   font-size: 70%;
 }
+
+
+.author-card {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  width: 100%;
+  background: var(--entry);
+  border-radius: var(--radius);
+  /*box-shadow: 5px 5px 16px 0px var(--box-shodow);*/
+}
+
+.author-card .author-avatar {
+  width: 128px;
+  height: 128px;
+  margin: 32px;
+  border-radius: 50%;
+}
+
+.author-card-text-wrapper {
+  margin: 0px 32px 0px 32px;
+  text-overflow: ellipsis;
+}
+
+/*标签*/
+.terms-tags {
+  text-align: center;
+}
+
+.terms-tags a:hover {
+  background: none;
+}
+
+.terms-tags a {
+  border-radius: 30px;
+  background: none;
+  transition: transform 0.5s;
+}
+
+.dark .terms-tags a {
+  background: none;
+}
+
+.dark .terms-tags a:hover {
+  background: none;
+}
+
+.terms-tags li {
+  margin: 5px;
 }

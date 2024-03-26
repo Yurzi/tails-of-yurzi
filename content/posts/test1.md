@@ -1,8 +1,10 @@
-+++
-title = 'Test1'
-date = 2024-03-26T13:01:48+08:00
-draft = true
-+++
+---
+title: "Test1"
+date: 2024-03-26T13:01:48+08:00
+draft: true
+tags:
+  - "Hugo"
+---
 
 # H1 Title
 

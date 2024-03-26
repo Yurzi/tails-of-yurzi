@@ -148,6 +148,12 @@ params:
     - name: bilibili
       title: View Author on Bilibili
       url: "https://space.bilibili.com/11955925/"
+    - name: email
+      title: Write to Author
+      url: "mailto://yurzi@foxmail.com"
+    - name: rss
+      title: Subscribe as RSS
+      url: "/index.xml"
 
   editPost:
     URL: "mailto://yurzi@foxmail.com?subject=Suggesting changes for"
