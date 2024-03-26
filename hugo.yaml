@@ -17,7 +17,7 @@ mainsections: ["posts"]
 
 minify:
   disableXML: true
-  # minifyOutput: true
+  minifyOutput: true
 
 defaultContentLanguage: zh
 languages:
@@ -124,9 +124,10 @@ params:
 
   defaultTheme: auto
   # disableThemeToggle: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowReadingTime: true
   # disableSpecial1stPost: true
+  disableScrollToTop: false
   displayFullLangName: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
@@ -135,6 +136,7 @@ params:
   ShowAllPagesInArchive: true
   ShowPageNums: true
   ShowToc: true
+  tocopen: true
   comments: true
   images: ["images/papermod-cover.png"]
 
@@ -148,15 +150,15 @@ params:
       url: "https://space.bilibili.com/11955925/"
 
   editPost:
-    URL: "https://github.com/yurzi/tails-of-yurzi/tree/content"
+    URL: "mailto://yurzi@foxmail.com?subject=Suggesting changes for"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
-  # label:
+  label:
   # iconSVG: '<svg xmlns="http://www.w3.org/2000/svg" height="25" viewBox="0 -960 960 960" fill="currentColor"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>'
   # text: "Home"
-  # icon: icon.png
-  # iconHeight: 35
+    icon: icon.png
+    iconHeight: 35
 
   # analytics:
   #     google:
@@ -164,11 +166,11 @@ params:
 
   assets:
     disableHLJS: true
-    favicon: "<link / abs url>"
-    favicon16x16: "<link / abs url>"
-    favicon32x32: "<link / abs url>"
-    apple_touch_icon: "<link / abs url>"
-    safari_pinned_tab: "<link / abs url>"
+    favicon: "favicon.ico"
+    favicon16x16: "favicon-16x16.png"
+    favicon32x32: "favicon-32x32.png"
+    apple_touch_icon: "apple-touch-icon.png"
+    safari_pinned_tab: "safari-pinned-tab.svg"
 
   cover:
       linkFullImages: true
@@ -221,3 +223,5 @@ services:
     disableInlineCSS: true
   twitter:
     disableInlineCSS: true
+  disqus:
+    shortname: tails-of-yurzi
