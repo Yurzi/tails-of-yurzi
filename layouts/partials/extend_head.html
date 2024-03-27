@@ -1,5 +1,62 @@
 {{- /* Head custom content area start */ -}}
 {{- /*     Insert any custom code (web-analytics, resources, etc.) - it will appear in the <head></head> section of every page. */ -}}
 {{- /*     Can be overwritten by partial with the same name in the global layouts. */ -}}
+{{- if .Param "math" }}
+  {{- $polyfill := resources.Get "js/polyfill.min.js" -}}
+  {{- with resources.GetRemote "https://polyfill.io/v3/polyfill.min.js?features=es6" }}
+    {{ with .Err }}
+      {{ errorf "%s" . }}
+      {{ $polyfill = resources.Get "js/polyfill.min.js" }}
+    {{ else }}
+      {{ $polyfill = .Content | resources.FromString "js/polyfill.min.js" }}
+    {{ end }}
+  {{- end }}
+  {{- $texChtml := resources.Get "js/tex-chtml.min.js" -}}
+  {{- with resources.GetRemote "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" }}
+    {{ with .Err }}
+      {{ errorf "%s" . }}
+      {{ $texChtml = resources.Get "js/tex-chtml.min.js" }}
+    {{ else }}
+      {{ $texChtml = .Content | resources.FromString "js/tex-chtml.min.js" }}
+    {{ end }}
+  {{- end }}
+  {{- $mathjax := (slice $polyfill $texChtml) | resources.Concat "assets/js/mathjax.js" | fingerprint -}}
+  <script
+    defer
+    crossorigin="anonymous"
+    id="MathJax-script"
+    src="{{ $mathjax.RelPermalink }}"
+    integrity="{{ $mathjax.Data.Integrity }}"
+  ></script>
+  <script>
+    MathJax = {
+      tex: {
+        displayMath: [
+          ["\\[", "\\]"],
+          ["$$", "$$"],
+        ], // block
+        inlineMath: [["\\(", "\\)"]], // inline
+      },
+    };
+  </script>
+{{- end }}
+{{- if .Param "mermaid" }}
+  {{- $mermaid := resources.Get "js/mermaid.min.js" -}}
+  {{- with resources.GetRemote "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js" }}
+    {{ with .Err }}
+      {{ errorf "%s" . }}
+      {{ $mermaid = resources.Get "js/mermaid.min.js" }}
+    {{ else }}
+      {{ $mermaid = .Content | resources.FromString "js/mermaid.min.js" }}
+    {{ end }}
+  {{- end }}
+  <script
+    defer
+    crossorigin="anonymous"
+    id="Mermaid-script"
+    src="{{ $mermaid.RelPermalink }}"
+    integrity="{{ $mermaid.Data.Integrity }}"
+  ></script>
+{{- end }}
 <link rel="manifest" href="/site.webmanifest" />
 {{- /* Head custom content area end */ -}}

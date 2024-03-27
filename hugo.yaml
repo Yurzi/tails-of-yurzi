@@ -44,7 +44,7 @@ languages:
           url: novels
           weight: 3
         - identifier: journals
-          name: 日志
+          name: 日记
           url: journals
           weight: 4
         - identifier: tags
@@ -117,7 +117,7 @@ outputs:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
+  description: "有毛绒绒的奇妙领域"
   author: ["Yurzi", "Lily"]
 
   beian: 浙ICP备2021036092号
@@ -139,6 +139,8 @@ params:
   tocopen: true
   comments: true
   images: ["cover.png"]
+  math: false
+  mermaid: false
 
 
   socialIcons:
@@ -196,6 +198,18 @@ params:
 
 markup:
   goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - \(
+            - \)
+        enable: true
     renderer:
       unsafe: true
   highlight:

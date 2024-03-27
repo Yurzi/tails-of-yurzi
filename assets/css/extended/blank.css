@@ -173,6 +173,28 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
   text-overflow: ellipsis;
 }
 
+.card {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  width: 100%;
+  background: var(--entry);
+  border-radius: var(--radius);
+  /*box-shadow: 5px 5px 16px 0px var(--box-shodow);*/
+}
+
+.card .card-icon {
+  width: 128px;
+  height: 128px;
+  margin: 32px;
+  border-radius: 50%;
+}
+
+.card-text-wrapper {
+  margin: 0px 32px 0px 32px;
+  text-overflow: ellipsis;
+}
+
 /*标签*/
 .terms-tags {
   text-align: center;

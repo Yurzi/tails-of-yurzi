@@ -3,9 +3,9 @@
     {{ with .Get "avatar" }}<img class="author-avatar" alt="author avatar" src="{{ . | safeURL }}" />{{ end }}
     <div class="author-card-text-wrapper" aria-hidden="true">
       {{ with .Get "name" }}<h2 class="author-name" aria-label="author name">{{ . }}</h2>{{ end }}
-      {{ with .Get "content" }}
+      {{ with .Inner }}
         <div class="author-card-text-content">
-          {{ . | markdownify }}
+          {{ . | markdownify | safeHTML }}
         </div>
       {{ end }}
     </div>
