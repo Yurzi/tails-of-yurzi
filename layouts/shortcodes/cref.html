@@ -1,7 +1,7 @@
 {{- if .IsNamedParams }}
   {{- if .Get "ref" }}
     {{- if .Get "to" }}
-      <sup class="crossref"
+      <sup class="crossref" aria-label="superscript citation"
         >[<a class="anchor" href="{{ .Get "ref" | safeURL }}">{{ .Get "to" | markdownify }}</a>]</sup
       >
     {{- end }}
@@ -9,7 +9,9 @@
 {{- else }}
   {{- if .Get 0 }}
     {{- if .Get 1 }}
-      <sup class="crossref">[<a class="anchor" href="{{ .Get 1 | safeURL }}">{{ .Get 0 | markdownify }}</a>]</sup>
+      <sup class="crossref" aria-label="supercript citation"
+        >[<a class="anchor" href="{{ .Get 1 | safeURL }}">{{ .Get 0 | markdownify }}</a>]</sup
+      >
     {{- end }}
   {{- end }}
 {{- end }}

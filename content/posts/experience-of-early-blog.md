@@ -11,7 +11,6 @@ keywords:
   - Experience
 tags:
   - Blog
-  - Hexo
 # series:
 # math: true
 # mermaid: true

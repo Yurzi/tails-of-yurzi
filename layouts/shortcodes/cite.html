@@ -1,8 +1,9 @@
 <a
   class="cite"
-  aria-label="superscript citation"
+  aria-label="citation"
   {{ with .Get "id" }}id="cite-{{ . }}"{{ end }}
   {{ with .Get "url" }}href="{{ . | safeURL }}"{{ end }}
 >
   {{ with .Get "title" }}{{ . | markdownify }}{{ end }}
 </a>
+<br />
