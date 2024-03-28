@@ -7,22 +7,22 @@ showtoc: false
 layout: special
 ---
 
-{{< authorCard name="Yurzi" avatar="/yurzi-avatar.png">}}
+{{< authorCard name="Yurzi" avatar="/yurzi-avatar.webp">}}
 What appears to be a fox,  
 fluffy assortment of things lover.
 
-#### Contact
+### Contact
 
 - **Matrix:** yurzi@matrix.org | root@yurzi.net
 - **IRC:** yurzi, yurzi\_, ....
 - **ActivityPub:** Yurzi (@yurzi:nya.one)
   {{</authorCard>}}
 
-{{< authorCard name="Lily" avatar="/lily-avatar.png">}}
+{{< authorCard name="Lily" avatar="/lily-avatar.webp">}}
 A cat, what appears to have mental problems,  
 but also fluffy assortment of things lover
 
-#### Contact
+### Contact
 
 - **ActivityPub:** Lily (@lily:nya.one)
   {{</authorCard>}}
