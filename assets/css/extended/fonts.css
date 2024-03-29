@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Mononoki";
+  src: url("/fonts/mononoki/mononoki-Regular.ttf") format("truetype"), url("/fonts/mononoki/mononoki-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Source Han Serif SC";
+  src: url("/fonts/source-han-serif/SourceHanSerifSC-Regular.otf") format("opentype");
+}

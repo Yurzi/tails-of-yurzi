@@ -9,6 +9,7 @@ keywords:
   - CV
   - MTCNN
 tags:
+  - Research
   - AI
 # series:
 math: true

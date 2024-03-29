@@ -15,6 +15,13 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
   --box-shodow: #F7F7F7;
 }
 
+
+body {
+  font-family: Source Han Serif SC, Mononoki, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+  font-size: 17px;
+}
+
+
 .toc {
   margin: 0 2px 40px 2px;
   border: 1px solid var(--border);
@@ -122,10 +129,11 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
   background: var(--code-bg);
 }
 
-.friend-logo {
+.friend-wrapper .friend-logo {
   height: 56px;
   width: 56px;
   padding: 2px;
+  margin: 16px;
   border-radius: 50%;
 }
 
