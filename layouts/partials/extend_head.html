@@ -1,6 +1,9 @@
 {{- /* Head custom content area start */ -}}
 {{- /*     Insert any custom code (web-analytics, resources, etc.) - it will appear in the <head></head> section of every page. */ -}}
 {{- /*     Can be overwritten by partial with the same name in the global layouts. */ -}}
+<link rel="preload" href="/fonts/mononoki/mononoki-Regular.ttf" as="font" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/mononoki/mononoki-Regular.otf" as="font" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/source-han-serif/SourceHanSerifSC-Regular.otf" as="font" crossorigin="anonymous" />
 {{- if .Param "math" }}
   {{- $polyfill := resources.Get "js/polyfill.min.js" -}}
   {{- with resources.GetRemote "https://polyfill.io/v3/polyfill.min.js?features=es6" }}
