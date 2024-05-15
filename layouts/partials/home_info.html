@@ -1,27 +1,28 @@
 {{- with site.Params.homeInfoParams }}
-<article class="first-entry home-info">
+  <article class="first-entry home-info">
     <header class="entry-header">
-        <h1>{{ .Title | markdownify }}</h1>
+      <h1>{{ .Title | markdownify }}</h1>
     </header>
     <div class="entry-content">
-        {{ .Content | markdownify }}
+      {{ .Content | markdownify }}
     </div>
     <footer class="entry-footer">
-        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+      {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
     </footer>
-</article>
+  </article>
 {{- else }}
-{{- with .Params.homeInfoParams }}
-<article class="first-entry home-info">
-    <header class="entry-header">
+  {{- with .Params.homeInfoParams }}
+    <article class="first-entry home-info">
+      <header class="entry-header">
         <h1>{{ .Title | markdownify }}</h1>
-    </header>
-    <div class="entry-content">
-        {{ .Content | markdownify}}
-    </div>
-    <footer class="entry-footer">
+      </header>
+      <div class="entry-content">
+        {{ .Content | markdownify }}
+      </div>
+      <footer class="entry-footer">
         {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
-    </footer>
-</article>
-{{- end}}
+      </footer>
+      {{ .Site.Title }}
+    </article>
+  {{- end }}
 {{- end -}}
