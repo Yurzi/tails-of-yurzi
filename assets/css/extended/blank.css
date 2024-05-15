@@ -9,10 +9,12 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
   --article-width: 650px;
   --toc-width: 300px;
   --box-shodow: #DBDBDB;
+  --code-bg-secondary: rgb(251, 251, 251);
 }
 
 .dark {
   --box-shodow: #F7F7F7;
+  --code-bg-secondary: rgb(65, 66, 72);
 }
 
 
@@ -123,6 +125,17 @@ body {
     width: 100%;
     flex-direction: column;
   }
+
+  .friend-text-wrapper {
+    margin: 0px 16px 16px 16px;
+  }
+
+}
+
+@media screen and (min-width: 600px) {
+  .friend-text-wrapper {
+    margin: 16px 0px 16px 0px;
+  }
 }
 
 .friend-wrapper:hover {
@@ -142,7 +155,6 @@ body {
   flex: 1;
   flex-direction: column;
   padding: 2px;
-  margin: 16px 0px 16px 0px;
 }
 
 .friend-text-title {
@@ -243,4 +255,36 @@ body {
   height: 100%;
   left: 0;
   top: 0;
+}
+
+.collapse-block {
+  border-radius: var(--radius);
+  background: var(--code-bg-secondary);
+}
+
+.collapse-block .collapse-title {
+  border-radius: var(--radius);
+  background: var(--code-bg);
+  padding: 0px 8px 4px 4px;
+}
+
+.collapse-block[open] .collapse-title {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+
+.collapse-block p {
+  margin: 0px 20px 20px 20px;
+}
+
+.spoiler {
+  border-radius: 2px;
+  background: var(--content)
+}
+
+.spoiler:hover {
+  background: unset;
 }
