@@ -108,7 +108,7 @@ sudo systemctl restart mongod
 
 ### 部署 Moe Counter
 
-在机器上找个位置，例如 `/srv/Moe-Counter`，按照作者所说{{cref "1" "#cite-1"}}来部署项目，由于Debian的官方仓库中 `yarn` 被更名为 `yarnpkg` 所以在使用 `apt` 安装时需要注意。
+在机器上找个位置，例如 `/srv/Moe-Counter`，按照作者所说{{<cref "1" "#cite-1">}}来部署项目，由于Debian的官方仓库中 `yarn` 被更名为 `yarnpkg` 所以在使用 `apt` 安装时需要注意。
 
 同时为了方便管理和安全，个人将整个 Moe Counter 项目分配给 `www-data` 用户运行，同时使用systemd进行管理。
 
