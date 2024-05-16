@@ -58,12 +58,12 @@
 
       {{- if and .IsHome (eq $paginator.PageNumber 1) }}
         {{- partial "home_info.html" . }}
-        <center>
+        <div style="align-items: center; display: flex; justify-content: center">
           <img
-            src="https://count.yurzi.net/get/@{{ replace .Site.Title " " "-" | lower }}"
+            src="https://count.yurzi.net/get/@{{ replace site.Title " " "-" | lower }}"
             alt="tails-of-yurzi-visitor-counter"
           />
-        </center>
+        </div>
       {{- end }}
 
       {{- $term := .Data.Term }}
