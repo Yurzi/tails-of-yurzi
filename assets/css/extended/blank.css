@@ -281,7 +281,8 @@ body {
 }
 
 .spoiler {
-  border-radius: 2px;
+  margin: auto 4px auto 4px;
+  border-radius: 5px;
   background: var(--content)
 }
 

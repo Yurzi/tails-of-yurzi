@@ -11,6 +11,7 @@ keywords: ""
 # math: true
 # mermaid: true
 draft: true
+disableCounter: true
 #cover:
 #  image: ""
 #  caption: ""
