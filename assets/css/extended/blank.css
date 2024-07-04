@@ -19,7 +19,7 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 
 
 body {
-  font-family: Source Han Serif SC, Mononoki, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+  font-family: serif, sans-serif, monospace;
   font-size: 17px;
 }
 
