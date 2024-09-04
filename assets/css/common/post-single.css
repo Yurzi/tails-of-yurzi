@@ -192,11 +192,10 @@
 .post-content code {
   margin: auto 4px;
   padding: 4px 6px;
-  font-size: 0.9em;
+  font-size: 0.78em;
   line-height: 1.5;
   background: var(--code-bg);
   border-radius: 2px;
-  font-family: Mononoki, monospace;
 }
 
 .post-content pre code {
@@ -267,7 +266,8 @@
 
 .toc details summary {
   cursor: zoom-in;
-  margin-inline-start: 20px;
+  margin-inline-start: 10px;
+  user-select: none;
 }
 
 .toc details[open] summary {
@@ -280,8 +280,9 @@
 }
 
 .toc .inner {
-  margin: 0 20px;
-  padding: 10px 20px;
+  margin: 5px 20px 0;
+  padding: 0 10px;
+  opacity: 0.9;
 }
 
 .toc li ul {
