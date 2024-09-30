@@ -4,7 +4,7 @@
 <br>
 <div style="align-items: center; display: flex; justify-content: center">
   <img
-    src="https://count.yurzi.net/get/@tails-of-yurzi"
+    src="https://count.yurzi.net/@tails-of-yurzi"
     alt="tails-of-yurzi-visitor-counter"
   />
 </div>

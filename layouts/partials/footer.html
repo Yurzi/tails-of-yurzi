@@ -4,7 +4,7 @@
       {{- if not .Layout | and .IsPage }}
         <div style="align-items: center; display: flex; justify-content: center">
           <img
-            src="https://count.yurzi.net/get/@{{ replace .Title " " "-" | lower }}"
+            src="https://count.yurzi.net/@{{ replace .Title " " "-" | lower }}"
             alt="{{ replace .Title " " "-" | lower }}-visitor-counter"
           />
         </div>
@@ -40,10 +40,7 @@
 {{- end }}
 {{- if not (.IsHome) }}
   <div hidden="true">
-    <img
-      src="https://count.yurzi.net/get/@{{ replace site.Title " " "-" | lower }}"
-      alt="tails-fo-yurzi-visitor-counter"
-    />
+    <img src="https://count.yurzi.net/@{{ replace site.Title " " "-" | lower }}" alt="tails-fo-yurzi-visitor-counter" />
   </div>
 {{- end }}
 {{- if (not site.Params.disableScrollToTop) }}

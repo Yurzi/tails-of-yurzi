@@ -33,7 +33,14 @@ disableCounter: false
 
 于是很快啊, 咱立刻就开始着手部署这个有趣的小工具了，但是在整个部署过程中确实遭遇了许多坎坷，着实让咱喝了一壶，于是在此记录。
 
-## 部署
+**2024年9月30日更新**
+
+由于之前被原版的 Moe Counter 宴请了一壶，于是乎咱在经过漫长时间的时间片轮转调度之后，终于在今日完成了对 Moe Counter 的 RIIR(Rewrite It In Rust),
+虽然似乎在 Github 上有一个叫 RustCounter 的类似物，但个人看了之后觉得它的实现不适合自己，所以还是依然决然的重写了一份，详见[moe-counter-rs](https://github.com/Yurzi/moe-counter-rs)。
+
+本文也因此得以新增一章来讲述如何部署咱自己实现的 Moe Counter 了。
+
+## 部署原版 Moe Counter
 
 由于 Moe Counter 项目是有后端的，所以需要部署在一个服务器上，虽然在 Github 上也有大佬提供的白嫖Replit{{<cref "1" "#cite-1">}}、
 CloudFlare{{<cref "2" "#cite-2">}}{{<cref "3" "#cite-3">}}
@@ -106,7 +113,7 @@ sudo systemctl restart mongod
 
 为什么要这样做？因为经过测试发现在不开启验证的情况下，即使存在用户也无法使得 Moe Counter 正确的连接数据库进行操作。
 
-### 部署 Moe Counter
+### 部署 Systemd 服务
 
 在机器上找个位置，例如 `/srv/Moe-Counter`，按照作者所说{{<cref "1" "#cite-1">}}来部署项目，由于Debian的官方仓库中 `yarn` 被更名为 `yarnpkg` 所以在使用 `apt` 安装时需要注意。
 
@@ -131,9 +138,8 @@ WantedBy=multi-user.target
 
 ```
 
-最后将Nginx的反向代理配置好，一个萌萌计数器就可以使用啦！下面的是 Demo 展示
-
-**meoboour**
+最后将Nginx的反向代理配置好，一个萌萌计数器就可以使用啦！下面的是 Demo 展示:
+**meobooru**
 {{<moe-counter "demo" "meobooru">}}
 
 **asoul**
@@ -145,7 +151,33 @@ WantedBy=multi-user.target
 **gelbooru**
 {{<moe-counter "demo" "gelbooru">}}
 
+## 部署 Moe Counter Rs
+
+对于咱自己实现的版本，部署就非常简单了，首先是前往仓库地址克隆项目，然后使用 Rust 工具链编译，这里展示将项目编译为纯静态链接文件。
+
+```sh
+# 克隆项目
+git clone https://github.com/Yurzi/moe-counter-rs.git
+# 使用 cargo 构建
+cargo build --release --target=x86_64-unknown-linux-musl
+```
+
+然后将编译好的文件和项目中的 `themes` 文件夹一起放到你服务器上的合适位置，其大致结构如下:
+
+```
+your-preferred-dir/
+    - moe-counter-rs
+    - themes/
+```
+
+然后就直接启动运行就好了，程序会自动在当前运行位置生成配置文件 `moe-counter-rs.toml` 和数据库文件 `data.db`，值得注意的是，由于 `moe-counter-rs` 使用相对路径寻找文件，
+所以请确保运行的位置和文件结构。
+
+此外你也可以特定的在启动时指定配置文件的位置，对于数据库的位置，以及主题文件夹的位置可以在配置文件中修改。
+
 ## 与 Hugo 集成
+
+这里主要展示的是对于咱自己的 Moe Counter 的 API 和 Hugo 的集成。
 
 首先是对于模板的修改，根据不同的主题可能有不一样的位置，
 咱插入了以下的代码，需要注意的是，如果代码所在的位置为使用 `partialCached` 的方式导入的话会出现问题，所以请修改为 `partial` 导入。
@@ -155,7 +187,7 @@ WantedBy=multi-user.target
 <!--对于主页-->
 <div style="align-items: center; display: flex; justify-content: center">
   <img
-    src="https://count.yurzi.net/get/@{{ replace site.Title " " "-" | lower }}"
+    src="https://count.yurzi.net/@{{ replace site.Title " " "-" | lower }}"
     alt="tails-of-yurzi-visitor-counter"
   />
 </div>
@@ -165,7 +197,7 @@ WantedBy=multi-user.target
   {{- if not .Layout | and .IsPage }}
     <div style="align-items: center; display: flex; justify-content: center">
       <img
-        src="https://count.yurzi.net/get/@{{ replace .Title " " "-" | lower }}"
+        src="https://count.yurzi.net/@{{ replace .Title " " "-" | lower }}"
         alt="{{ replace .Title " " "-" | lower }}-visitor-counter"
       />
     </div>
@@ -183,7 +215,7 @@ WantedBy=multi-user.target
   {{ with .Get "id" }}
     <div style="align-items: center; display: flex; justify-content: {{ $align }}">
       <img
-        src="http://count.yurzi.net/get/@{{ . | safeURL }}?theme={{ $theme }}"
+        src="http://count.yurzi.net/@{{ . | safeURL }}?theme={{ $theme }}"
         alt="{{ . | safeHTMLAttr }}-counter"
       />
     </div>
@@ -194,7 +226,7 @@ WantedBy=multi-user.target
   {{ with .Get 0 }}
     <div style="align-items: center; display: flex; justify-content: {{ $align }}">
       <img
-        src="http://count.yurzi.net/get/@{{ . | safeURL }}?theme={{ $theme }}"
+        src="http://count.yurzi.net/@{{ . | safeURL }}?theme={{ $theme }}"
         alt="{{ . | safeHTMLAttr }}-counter"
       />
     </div>
@@ -204,7 +236,7 @@ WantedBy=multi-user.target
 
 ## 总结
 
-至此，咱终于也有属于自己的萌萌计数器哩🎉。
+至此，咱终于也有属于真正意义上自己的萌萌计数器哩🎉。
 
 ## 参考文献
 
@@ -213,3 +245,4 @@ WantedBy=multi-user.target
 {{<cite 3 "[3] Shirakii, 将萌萌计数器部署到 Cloudflare Workers" "https://www.shirakii.com/post/moe-counter-cf/">}}
 {{<cite 4 "[4] Github: grbnb/moe-counter-vercel: vercel平台一键部署Moc-Counter" "https://github.com/grbnb/moe-counter-vercel">}}
 {{<cite 5 "[5] Install MongoDB Community Edition on Debian" "https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-debian/">}}
+{{<cite 3 "[6] Github: yurzi/moe-counter-rs: Rust实现的Moe-Counter" "https://github.com/Yurzi/moe-counter-rs">}}

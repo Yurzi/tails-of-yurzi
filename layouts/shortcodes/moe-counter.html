@@ -3,10 +3,7 @@
   {{ $align := (.Get "align") | default "center" | safeCSS }}
   {{ with .Get "id" }}
     <div style="align-items: center; display: flex; justify-content: {{ $align }}">
-      <img
-        src="http://count.yurzi.net/get/@{{ . | safeURL }}?theme={{ $theme }}"
-        alt="{{ . | safeHTMLAttr }}-counter"
-      />
+      <img src="http://count.yurzi.net/{{ . | safeURL }}?theme={{ $theme }}" alt="{{ . | safeHTMLAttr }}-counter" />
     </div>
   {{ end }}
 {{- else }}
@@ -14,10 +11,7 @@
   {{ $align := (.Get 2) | default "center" | safeCSS }}
   {{ with .Get 0 }}
     <div style="align-items: center; display: flex; justify-content: {{ $align }}">
-      <img
-        src="http://count.yurzi.net/get/@{{ . | safeURL }}?theme={{ $theme }}"
-        alt="{{ . | safeHTMLAttr }}-counter"
-      />
+      <img src="http://count.yurzi.net/{{ . | safeURL }}?theme={{ $theme }}" alt="{{ . | safeHTMLAttr }}-counter" />
     </div>
   {{ end }}
 {{- end }}
