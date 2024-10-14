@@ -162,18 +162,19 @@ git clone https://github.com/Yurzi/moe-counter-rs.git
 cargo build --release --target=x86_64-unknown-linux-musl
 ```
 
-然后将编译好的文件和项目中的 `themes` 文件夹一起放到你服务器上的合适位置，其大致结构如下:
+然后将编译好的二进制放到你服务器上的合适位置，其大致结构如下:
 
 ```
 your-preferred-dir/
     - moe-counter-rs
-    - themes/
 ```
 
 然后就直接启动运行就好了，程序会自动在当前运行位置生成配置文件 `moe-counter-rs.toml` 和数据库文件 `data.db`，值得注意的是，由于 `moe-counter-rs` 使用相对路径寻找文件，
 所以请确保运行的位置和文件结构。
 
 此外你也可以特定的在启动时指定配置文件的位置，对于数据库的位置，以及主题文件夹的位置可以在配置文件中修改。
+
+另外对于外部的 `themes` 文件夹，其内容会覆盖内嵌的同名主题，方便你需要对内置的同名主题进行修改的情况。
 
 ## 与 Hugo 集成
 
