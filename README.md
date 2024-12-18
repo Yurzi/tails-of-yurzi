@@ -2,9 +2,11 @@
 
 <h4 align=center>🦊 Yurzi | 🐱 Lily</h4>
 <br>
-<div style="align-items: center; display: flex; justify-content: center">
-  <img
-    src="https://count.yurzi.net/@tails-of-yurzi"
-    alt="tails-of-yurzi-visitor-counter"
-  />
-</div>
+<p align="center">
+  <a href="">
+    <img
+      src="https://count.yurzi.net/@tails-of-yurzi"
+      alt="tails-of-yurzi-visitor-counter"
+    />
+  </a>
+</p>
