@@ -1,9 +1,0 @@
-<p>
-  <details
-    class="collapse-block"
-    {{ with .Get "openByDefault" }}open="{{ . }}"{{ end }}
-  >
-    <summary class="collapse-title" markdown="span">{{ .Get "summary" | markdownify }}</summary>
-    {{ .Inner | markdownify }}
-  </details>
-</p>
