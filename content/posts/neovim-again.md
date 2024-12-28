@@ -14,8 +14,8 @@ tags:
 # series:
 # math: true
 # mermaid: true
-draft: true
-disableCounter: true
+draft: false
+disableCounter: false
 #cover:
 #  image: ""
 #  caption: ""
