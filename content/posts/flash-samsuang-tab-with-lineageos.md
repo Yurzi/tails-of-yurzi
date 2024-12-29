@@ -64,7 +64,7 @@ draft: false
 - [LineageOS(deprecated)](https://forum.xda-developers.com/t/rom-unofficial-10-lineageos-17-1-for-samsung-galaxy-tab-s-sm-t700-sm-t705-sm-t800-sm-t800-sm-p600.4270943/)|[Self build](#自给自足)
 - [Magisk](https://forum.xda-developers.com/t/rom-unofficial-10-lineageos-17-1-for-samsun-galaxy-tab-s-sm-t700-sm-t705-sm-t800-sm-t800-sm-p600.4270943/)
 
-[scode type="red" size=""]切记，自己准备好ABD系列工具，并配置妥当，推荐前往谷歌官网[下载]([Android 调试桥 (adb) | Android 开发者 | Android Developers](https://developer.android.com/studio/command-line/adb?hl=zh-cn))[/scode]
+**切记，自己准备好ABD系列工具，并配置妥当，推荐前往谷歌官网[下载]([Android 调试桥 (adb) | Android 开发者 | Android Developers](https://developer.android.com/studio/command-line/adb?hl=zh-cn))**
 
 ## 开始施术
 
@@ -86,7 +86,7 @@ draft: false
 
 或者汝可以使用优雅的ADB进行`adb reboot download`
 
-[scode type="blue" size=""]退出下载模式方法是按住**电源键和音量-**[/scode]
+**退出下载模式方法是按住「电源键和音量-」**
 
 ### 使用Odin进行施法
 
@@ -146,7 +146,8 @@ draft: false
 
 ### 自给自足
 
-随着时间的推移，很多时候发现一些链接中的内容不再有效，这种时候如果还想前进就难免的需要自己自足。在2023年4月23日，不知道为什么原有的非官方的LineageOS ROM作者删除了ROM包。这种时候就需要自己编译啦。以下是参考资料:
+随着时间的推移，很多时候发现一些链接中的内容不再有效，这种时候如果还想前进就难免的需要自己自足。
+在2023年4月23日，不知道为什么原有的非官方的LineageOS ROM作者删除了ROM包。这种时候就需要自己编译啦。以下是参考资料:
 
 - [LineageOS Official Wiki](https://wiki.lineageos.org/devices/chagalllte/build)
 - [Mystery's Guide](https://mystery00.github.io/2017/04/23/%E7%BC%96%E8%AF%91LineageOS/)
