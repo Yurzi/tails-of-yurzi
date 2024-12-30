@@ -4,3 +4,5 @@ package-lock.json
 .helix
 .hugo_build.lock
 *.sh
+*.ps1
+*.secret
