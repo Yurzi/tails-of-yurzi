@@ -9,10 +9,12 @@ keywords:
   - WSL2
   - Linux Kernel
   - Docker Desktop
+  - eBPF
 tags:
   - Linux
   - WSL
   - Docker
+  - eBPF
 # series:
 # math: true
 # mermaid: true

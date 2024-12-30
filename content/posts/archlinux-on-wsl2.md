@@ -10,6 +10,7 @@ keywords:
   - ArchLinux
   - WSL
 tags:
+  - WSL
   - Linux
 # series:
 # math: true
