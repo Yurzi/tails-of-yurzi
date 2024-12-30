@@ -701,9 +701,9 @@ q行，每行1个整数，表示f(i)的值。查询的值都在32位整数范围
 
 ```
 3
- 1
- 2
- 3
+1
+2
+3
 ```
 
 ### 输出样例
@@ -712,8 +712,8 @@ q行，每行1个整数，表示f(i)的值。查询的值都在32位整数范围
 
 ```
 10
- 11
- 12
+11
+12
 ```
 
 ### 题目解析
@@ -727,35 +727,33 @@ q行，每行1个整数，表示f(i)的值。查询的值都在32位整数范围
 ##### 代码实现：
 
 ```cpp
-#include <iostream>
- #include <vector>
- using namespace std;
+using namespace std;
 
- int res[10001];
- int toslove(int n){
-     if(n==1){
-         return res[n];
-     }
-     if(res[n]<=0){
-         res[n]=(toslove(n-1)*(double)11/10);
-     }
-     return res[n];
- }
+int res[10001];
+int toslove(int n){
+    if(n==1){
+        return res[n];
+    }
+    if(res[n]<=0){
+        res[n]=(toslove(n-1)*(double)11/10);
+    }
+    return res[n];
+}
 
- int main(){
-     res[1]=10;
-     int n=0;
-     scanf("%d",&n);
-     getchar();
-     int t=0;
-     for (int i = 0; i <n; ++i)
-     {
-         scanf("%d",&t);
-         getchar();
-         printf("%d",toslove(t));
-         if(i<n-1)cout<<"\n";
-     }
- }
+int main(){
+    res[1]=10;
+    int n=0;
+    scanf("%d",&n);
+    getchar();
+    int t=0;
+    for (int i = 0; i <n; ++i)
+    {
+        scanf("%d",&t);
+        getchar();
+        printf("%d",toslove(t));
+        if(i<n-1)cout<<"\n";
+    }
+}
 ```
 
 ##### 分析
@@ -796,22 +794,22 @@ q行，每行1个整数，表示f(i)的值。查询的值都在32位整数范围
 
 ```
 10 10 3
- 2 2 2
- 5 5 5
- 10 10 20
- 10 10 2
- 2 2 1
- 6 6 6
+2 2 2
+5 5 5
+10 10 20
+10 10 2
+2 2 1
+6 6 6
 ```
 
 ### 输出样例
 
 ```
 10 10 4
- 2 2 3
- 5 5 5
- 6 6 6
- 10 10 20
+2 2 3
+5 5 5
+6 6 6
+10 10 20
 ```
 
 ### 题目解析
@@ -828,73 +826,73 @@ Map用来优化查找确实好用，而且直接调用stl十分省事。
 
 ```cpp
 #include<iostream>
- #include<algorithm>
- #include<map>
- #include<vector>
+#include<algorithm>
+#include<map>
+#include<vector>
 
- using namespace std;
+using namespace std;
 
- typedef pair<pair<int,int>,int32_t> yurzi;
+typedef pair<pair<int,int>,int32_t> yurzi;
 
- struct cmp
- {
-     bool operator()(const pair<int,int> &a,const pair<int,int> &b)const{
-         if(a.first==b.first){
-             return a.second<b.second;
-         }
-         return a.first<b.first;
-     }
- };
- int main(int argc, char const *argv[])
- {
-     map<pair<int,int>,int32_t,cmp> a;
-     int n1=0,m1=0,t1=0;
-     scanf("%d %d %d",&n1,&m1,&t1);
-     getchar();
-     int r=0,c=0;
-     int32_t v=0;
-     for(int i=0;i<t1;++i){
-         scanf("%d %d %d",&r,&c,&v);
-         getchar();
-         a.insert(yurzi(pair<int,int>(r,c),v));
-     }
-     int n2=0,m2=0,t2=0;
-     scanf("%d %d %d",&n2,&m2,&t2);
-     getchar();
-     if(t1>min(n1,m1)){
-         printf("Illegal!");
-     }
-     if(n1==n2&&m1==m2&&t2>=0){
-         for (int i = 0; i < t2; ++i)
-         {
-             scanf("%d %d %d",&r,&c,&v);
-             getchar();
-             auto iter=a.find(pair<int,int>(r,c));
-             if(iter!=a.end()){
-                 iter->second=iter->second+v;
-                 if(iter->second==0){
-                     a.erase(iter);//删除为0的元素
-                 }
-             }
-             else{
-                 a.insert(yurzi(pair<int,int>(r,c),v));
-             }
-         }
-         map<pair<int,int>,int>::iterator p;
-         p=a.begin();
-         printf("%d %d %d\n",n1,m1,a.size());
-         for (int i = a.size(); i >0; --i)
-         {
-             printf("%d %d %d\n",p->first.first,p->first.second,p->second);
-             p++;
-         }
+struct cmp
+{
+    bool operator()(const pair<int,int> &a,const pair<int,int> &b)const{
+        if(a.first==b.first){
+            return a.second<b.second;
+        }
+        return a.first<b.first;
+    }
+};
+int main(int argc, char const *argv[])
+{
+    map<pair<int,int>,int32_t,cmp> a;
+    int n1=0,m1=0,t1=0;
+    scanf("%d %d %d",&n1,&m1,&t1);
+    getchar();
+    int r=0,c=0;
+    int32_t v=0;
+    for(int i=0;i<t1;++i){
+        scanf("%d %d %d",&r,&c,&v);
+        getchar();
+        a.insert(yurzi(pair<int,int>(r,c),v));
+    }
+    int n2=0,m2=0,t2=0;
+    scanf("%d %d %d",&n2,&m2,&t2);
+    getchar();
+    if(t1>min(n1,m1)){
+        printf("Illegal!");
+    }
+    if(n1==n2&&m1==m2&&t2>=0){
+        for (int i = 0; i < t2; ++i)
+        {
+            scanf("%d %d %d",&r,&c,&v);
+            getchar();
+            auto iter=a.find(pair<int,int>(r,c));
+            if(iter!=a.end()){
+                iter->second=iter->second+v;
+                if(iter->second==0){
+                    a.erase(iter);//删除为0的元素
+                }
+            }
+            else{
+                a.insert(yurzi(pair<int,int>(r,c),v));
+            }
+        }
+        map<pair<int,int>,int>::iterator p;
+        p=a.begin();
+        printf("%d %d %d\n",n1,m1,a.size());
+        for (int i = a.size(); i >0; --i)
+        {
+            printf("%d %d %d\n",p->first.first,p->first.second,p->second);
+            p++;
+        }
 
-     }else{
-         printf("Illegal!");
-     }
+    }else{
+        printf("Illegal!");
+    }
 
-     return 0;
- }
+    return 0;
+}
 ```
 
 ##### 分析
@@ -939,11 +937,11 @@ Q 1 i为询问编号为i的汉字之后的汉字的编号。
 
 ```
 1
- 9999 4
- B 1 2
- A 3 9999
- Q 1 1
- Q 0 3
+9999 4
+B 1 2
+A 3 9999
+Q 1 1
+Q 0 3
 ```
 
 ### 输出样例
@@ -952,7 +950,7 @@ Q 1 i为询问编号为i的汉字之后的汉字的编号。
 
 ```
 4
- 9998
+9998
 ```
 
 ### 题目解析

@@ -80,7 +80,7 @@ make -j$(nproc) KCONFIG_CONFIG=Microsoft/config-wsl
 ### 安装
 
 安装 WSL2 内核的方式非常的简单，根据巨硬的文档{{<cref 3 "#cite-3">}}，
-只需要修改 `%USERPROFILE%\.` 下的 `.wslconfig` 文件即可，在其中指定自己编译的内核路径即可。
+只需要修改 `%USERPROFILE%\.wslconfig` 文件即可，在其中指定自己编译的内核路径即可。
 例如下面这样：
 
 ```ini
