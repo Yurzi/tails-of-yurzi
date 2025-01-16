@@ -6,3 +6,4 @@ package-lock.json
 *.sh
 *.ps1
 *.secret
+*.py
