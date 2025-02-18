@@ -2,7 +2,7 @@
 title: "主页"
 params:
   homeInfoParams:
-    Title: "Ciallo～(∠・ω< ) "
+    Title: "Ciallo～(∠・ω< )⌒★"
     Content: >
       👋 欢迎来到 **玖只的尾巴**!
 
