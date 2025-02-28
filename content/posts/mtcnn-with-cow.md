@@ -3,7 +3,6 @@ title: "MTCNN在牛脸检测和对齐上的可行性分析"
 date: "2022-07-26T03:21:53+08:00"
 lastmod: "2024-03-27T23:02:53+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "关于是否能将MTCNN用在牛脸上的探究"
 keywords:
   - CV

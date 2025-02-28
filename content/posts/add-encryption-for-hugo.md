@@ -3,7 +3,6 @@ title: '为博客实现加密功能'
 date: "2025-02-13T16:03:58+08:00"
 lastmod: "2025-02-13T16:03:58+08:00"
 author: ["Yurzi"]
-lang: "zh-CN"
 description: "通过简单的方式为Hugo博客实现加密功能"
 keywords:
   - Blog

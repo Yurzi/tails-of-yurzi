@@ -3,7 +3,6 @@ title: 'Neovim again'
 date: "2024-12-25T15:52:35+08:00"
 lastmod: "2024-12-25T15:52:35+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "体验了一众编辑器之后回到Neovim"
 keywords: 
   - "Neovim"

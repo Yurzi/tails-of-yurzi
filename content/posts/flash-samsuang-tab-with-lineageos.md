@@ -3,7 +3,6 @@ title: "记三星平板SM-T805C刷机并使用LineageOS"
 date: "2022-08-16T23:34:22+08:00"
 lastmod: "2024-03-27T23:34:22+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "三星平板刷机，然后装上LineageOS"
 keywords:
   - Android

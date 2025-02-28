@@ -3,7 +3,6 @@ title: "标准输入输出浅析"
 date: "2022-07-03T01:14:42+08:00"
 lastmod: "2024-03-27T20:36:42+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "简单的探究了标准输入输出的运作过程"
 keywords:
   - Linux

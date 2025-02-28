@@ -3,7 +3,6 @@ title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 date: "{{ .Date }}"
 lastmod: "{{ .Date }}"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: ""
 keywords: ""
 # tags: []

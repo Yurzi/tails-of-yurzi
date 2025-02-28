@@ -3,7 +3,6 @@ title: "前言"
 date: "2021-05-01T12:29:30+08:00"
 lastmod: "2024-03-27T20:53:30+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "一些关于《洛玖只的日常生活》的介绍"
 keywords:
   - Novel

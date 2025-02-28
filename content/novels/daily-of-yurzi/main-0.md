@@ -3,7 +3,6 @@ title: "序章 抑郁"
 date: "2022-07-05T00:21:02+08:00"
 lastmod: "2024-03-27T22:58:02+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: ""
 keywords:
   - Novel

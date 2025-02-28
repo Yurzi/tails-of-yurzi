@@ -3,7 +3,6 @@ title: "番外 九阳豆浆机"
 date: "2021-05-02T21:13:22+08:00"
 lastmod: "2024-03-27T21:13:22+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "上古神器九阳豆浆机现世，这会带来什么奇妙的事情呢？"
 keywords:
   - Novel

@@ -3,7 +3,6 @@ title: "WIN11+Qt6+Clion环境配置及部分错误处理"
 date: "2021-05-31T21:39:25+08:00"
 lastmod: "2024-03-27T21:39:25+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "在Windows平台上部署Qt6开发环境, 并设置好CMake"
 keywords:
   - Windows

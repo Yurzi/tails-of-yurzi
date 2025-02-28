@@ -3,7 +3,6 @@ title: "最大连续子序列的和"
 date: "2021-05-09T13:46:08+08:00"
 lastmod: "2024-03-27T20:24:08+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "对于最大连续子序列的和的一些求解思路"
 keywords:
   - Algorithm

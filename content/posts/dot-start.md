@@ -3,7 +3,6 @@ title: "Dot学习笔记"
 date: "2021-11-10T09:49:50+08:00"
 lastmod: "2024-03-27T20:41:50+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "记录了一些Dot语言中的一些知识点"
 keywords:
   - Dot

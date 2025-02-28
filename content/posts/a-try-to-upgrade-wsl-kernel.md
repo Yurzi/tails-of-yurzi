@@ -3,7 +3,6 @@ title: '记录一次升级WSL2内核的经历'
 date: "2024-12-28T22:02:29+08:00"
 lastmod: "2024-12-28T22:02:29+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "升级 WSL2 的内核并修复 Docker Desktop 无法启动的问题"
 keywords: 
   - WSL2

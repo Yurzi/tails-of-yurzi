@@ -3,7 +3,6 @@ title: "数据结构解题报告"
 date: "2021-06-20T21:58:35+08:00"
 lastmod: "2024-03-27T21:58:35+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "吉林大学数据结构课的一些题目的解题报告"
 keywords:
   - Datastruct

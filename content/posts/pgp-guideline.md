@@ -3,7 +3,6 @@ title: "PGP使用实践指北"
 date: "2022-10-22T22:37:49+08:00"
 lastmod: "2024-03-27T23:37:49+08:00"
 author: ["Yurzi"]
-lang: "zh-CN"
 description: "简单的介绍PGP的使用"
 keywords:
   - Cryptography

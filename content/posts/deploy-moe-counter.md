@@ -3,7 +3,6 @@ title: "萌萌计数器 Moe Counter"
 date: "2024-05-16T15:19:42+08:00"
 lastmod: "2024-05-16T15:19:42+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "如何将Moe Counter部署到自己的服务器上, 并集成进 Hugo 博客"
 keywords:
   - Deploy

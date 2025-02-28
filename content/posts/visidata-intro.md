@@ -3,7 +3,6 @@ title: "Visidata 简要介绍"
 date: "2024-04-04T22:06:58+08:00"
 lastmod: "2024-04-07T15:44:58+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "简单介绍Visidata的使用"
 keywords:
   - Visidata

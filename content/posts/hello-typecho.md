@@ -3,7 +3,6 @@ title: "你好，Typecho"
 date: "2022-07-02T23:00:58+08:00"
 lastmod: "2024-03-27T20:29:58+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "从Hexo迁移到Typecho的一些感想"
 keywords:
   - Blog

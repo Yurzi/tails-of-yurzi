@@ -4,7 +4,6 @@ date: "2021-05-01T21:43:36+08:00"
 lastmod: "2024-03-27T14:56:36+08:00"
 author: ["Yurzi", "Lily"]
 description: "早年间搭建个人博客的心路历程"
-lang: "zh-CN"
 keywords:
   - Blog
   - Hexo

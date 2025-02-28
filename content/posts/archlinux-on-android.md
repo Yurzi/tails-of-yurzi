@@ -3,7 +3,6 @@ title: "在安卓上跑一个Archlinux ARM"
 date: "2024-01-01T23:42:05+08:00"
 lastmod: "2024-03-27T23:42:05+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "在安卓机子上运行一个完整的ArchLinux！"
 keywords:
   - Linux

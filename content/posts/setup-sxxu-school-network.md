@@ -3,7 +3,6 @@ title: "在Linux上设置某大学的校园网"
 date: "2024-10-14T17:09:35+08:00"
 lastmod: "2024-10-14T17:09:35+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "记录如何在Linux设备上设置某大学的校园网"
 keywords:
   - SYSU

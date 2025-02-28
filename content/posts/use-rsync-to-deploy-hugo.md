@@ -3,7 +3,6 @@ title: "使用Rsync来发布Hugo博客"
 date: "2024-03-28T16:53:00+08:00"
 lastmod: "2024-03-28T16:53:00+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "使用Rsync将博客自动发布到远程服务器"
 keywords:
   - Rsync

@@ -3,7 +3,6 @@ title: "在WSL2中安装ArchLinux"
 date: "2022-07-08T00:38:03+08:00"
 lastmod: "2024-03-27T23:30:03+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "在WSL2上安装ArchLinux"
 keywords:
   - Windows

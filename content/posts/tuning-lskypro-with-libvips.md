@@ -3,7 +3,6 @@ title: "使用libvips优化Lskypro的图片处理"
 date: "2024-03-28T20:30:31+08:00"
 lastmod: "2024-03-28T20:30:31+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "使用libvips优化Lskypro的图片处理，并做一些bug修复"
 keywords: [Lskypro, Tuning]
 tags: [Tuning]

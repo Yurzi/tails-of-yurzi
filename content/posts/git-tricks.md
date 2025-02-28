@@ -3,7 +3,6 @@ title: 'Git Tricks'
 date: "2025-01-16T16:52:38+08:00"
 lastmod: "2025-01-16T16:52:38+08:00"
 author: ["Yurzi", "Lily"]
-lang: "zh-CN"
 description: "一些 Git 使用的小技巧"
 keywords:
   - Git
