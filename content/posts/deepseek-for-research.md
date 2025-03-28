@@ -10,6 +10,7 @@ keywords:
 tags:
   - "Research"
   - "Tools"
+  - "AI"
 # series:
 # math: true
 # mermaid: true
