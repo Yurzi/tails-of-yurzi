@@ -14,9 +14,3 @@ lastmod: "2024-04-02T15:04:46+08:00"
 {{<friendLink logo="https://shadowrz.github.io/assets/avatar.png" title="ShadowRZ's Blog" word="Where something happens." url="https://shadowrz.github.io/blog/">}}
 {{<friendLink logo="http://q1.qlogo.cn/g?b=qq&nk=1255342403&s=640" title="OceanPresent" word="Can you hear me?" url="https://oceanpresent.art/">}}
 
-## 自建服务
-
-{{<friendLink logo="https://img.yurzi.net/favicon.ico" title="Yurzi's Image Repo" word="Fox and cat will keep your image" url="https://img.yurzi.net/">}}
-{{<friendLink logo="https://cloud.yurzi.net/static/img/cloudreve.svg" title="Yurzi Cloud" word="Fox and cat will keep your data" url="https://cloud.yurzi.net/">}}
-{{<friendLink logo="https://pwd.yurzi.net/favicon.ico" title="Yurzi's Vaultwarden" word="Fox and cat will keep your password" url="https://pwd.yurzi.net/">}}
-{{<friendLink logo="https://push.yurzi.net/static/media/ntfy-d7abf07b.svg" title="Yurzi's Ntfy" word="Fox and cat will remember to notify you" url="https://push.yurzi.net/">}}
