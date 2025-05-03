@@ -108,14 +108,16 @@ Hugo 是从 Markdown 文件生成静态页面的。所以实现加密有如下�
 由于咱不太希望自己的博客过于依赖外部 CDN 的资源，所以使用了如下的方式来导入 CryptoJS。
 
 ```html
-{{- $cryptoJS := resources.Get "js/crypto-js.js" -}}
-{{- with try (resources.GetRemote "https://cdn.jsdelivr.net/npm/crypto-js/crypto-js.js") }}
-  {{ with .Err }}
-    {{ errorf "%s" .}}
-  {{ else with .Value }}
-    {{ $cryptoJS = . | resources.FromString "js/crypto-js.js" }}
-  {{ end }}
-{{- end }}
+{{- $cryptoJS := resources.Get "js/crypto-js.min.js" -}}
+  {{- with try (resources.GetRemote "https://cdn.jsdelivr.net/npm/crypto-js/crypto-js.js") }}
+    {{ with .Err }}
+      {{ errorf "%s" . }}
+    {{ else with .Value }}
+      {{ with resources.Copy "js/crypto-js.min.js" . }}
+        {{ $cryptoJS = . }}
+      {{ end }}
+    {{ end }}
+  {{- end }}
 {{ $cryptoJS = $cryptoJS | fingerprint }}
 <script
   defer
