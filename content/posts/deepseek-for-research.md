@@ -46,7 +46,7 @@ existing tools and solutions, and the problems faced by LLM in assisting academi
 
 在介绍 DeepSeek-R1 之前需要先介绍下LLM的构建步骤。下图展示了 LLM 构建阶段。
 
-![Steps to  develop LLM](https://b2-img.yurzi.cc/2025/02/19/67b532f492ffb.webp)
+![Steps to  develop LLM](https://img.yurzi.net/api/assets/d0bd956c-d43a-4beb-885f-8354e63aad56/thumbnail?size=preview&key=l94E8RzXvFP3CDjfnQbfKDGLD6WNtHWZmjFJ1aZWoRO92FwyoyKyPaixIaM7-q4h0ME&c=OwgCDIKVvrz0Y4SbhldcYMgFdQ%3D%3D)
 
 其中阶段1-3是开发LLM的常见步骤，包括后续的微调。但是随着LLM的发展，阶段4展示了对于LLM的更多特化方向。而其中的推理模型正是几天我们介绍的 DeepSeek-R1 模型的特化形式。
 
@@ -54,7 +54,7 @@ DeepSeek-R1 是在预训练模型 DeepSeek-V3 基础上特化训练而来的推�
 
 举个例子，虽然现在大多数LLM都具备基本的「推理能力」，能够回答诸如「如果一列火车以每小时60英里的速度行驶3小时，它会行驶多远？」这样的问题。但是对于普通的LLM可能只会提供一个简短的答案，而推理模型通常会包含中间步骤，从而揭示部分思考过程。（需要注意的是，许多未专门针对推理任务开发的大型语言模型也可以在其答案中提供中间推理步骤。）如下图所示。
 
-![04124450-9742-4c2e-899b-10b041404ad0_1450x830](https://b2-img.yurzi.cc/2025/02/19/67b5353353774.webp)
+![04124450-9742-4c2e-899b-10b041404ad0_1450x830](https://img.yurzi.net/api/assets/797c4e43-d059-4863-88d2-045776ca4cb6/thumbnail?size=preview&key=l94E8RzXvFP3CDjfnQbfKDGLD6WNtHWZmjFJ1aZWoRO92FwyoyKyPaixIaM7-q4h0ME&c=dggGJISv0YlomHZdl3VghwV2WA%3D%3D)
 
 不同的模型对于中间推理过程的展示也不尽相同，例如 OpenAI的 o1 模型不会展示其推理过程，而 DeepSeek-R1 则会向用户展示其推理过程。
 
@@ -66,7 +66,7 @@ DeepSeek-R1 其中另一个最显著的特点是其训练流程中只使用了RL
 
 下图为其技术报告中给出的训练流程：
 
-![db19df56-c5bf-4a0c-aafb-4629a39b13f5_1542x1166](https://b2-img.yurzi.cc/2025/02/19/67b5384dbe821.webp)
+![db19df56-c5bf-4a0c-aafb-4629a39b13f5_1542x1166](https://img.yurzi.net/api/assets/45baf79e-ead7-4471-a67a-8f904f339e8c/thumbnail?size=preview&key=l94E8RzXvFP3CDjfnQbfKDGLD6WNtHWZmjFJ1aZWoRO92FwyoyKyPaixIaM7-q4h0ME&c=%2FPcBBYD2p4cot2iXe1Zmd%2FpulOwD)
 
 - 其中 DeepSeek-R1-Zero 基于 DeepSeek-V3 基础模型训练而来，研究团队使用两种奖励函数进行强化训练，这种方法称为冷启动训练，因为其并没有使用监督微调（Supervised Fine-Tuning）和 RLHF（Reinforcement Learning with Human Feedback）。
 
@@ -132,7 +132,7 @@ DeepSeek-R1在传统自回归预测基础上引入因果稀疏注意力机制，
 
 对于 DeepSeek-R1，其技术报告指出，简短的提示词反而能取得更好的效果。如下图所示，更短的提示词能获得更好的效果。
 
-![image-20250219103839931](https://b2-img.yurzi.cc/2025/02/19/67b54433581df.webp)
+![image-20250219103839931](https://img.yurzi.net/api/assets/e533196a-559e-4434-93d1-14f047ef95cb/thumbnail?size=preview&key=l94E8RzXvFP3CDjfnQbfKDGLD6WNtHWZmjFJ1aZWoRO92FwyoyKyPaixIaM7-q4h0ME&c=rQcKDIL8tpSGd3h6h3n9mPrOnA%3D%3D)
 
 对于非推理型模型，一般提示词的编写遵循分为两种范式：单轮对话与多轮对话。
 
@@ -160,7 +160,7 @@ DeepSeek-R1在传统自回归预测基础上引入因果稀疏注意力机制，
 
 对于前者目前并没有一个易用的方案来来使用，但对于后者，目前已经有比较多成熟的应用可以使用了。比如 RAGFLow可以用工作流的方式定义RAG的算法、比如 CherrySudio 允许本地搭建小型知识库。
 
-![image-20250219110520618](https://b2-img.yurzi.cc/2025/02/19/67b54a73f237b.webp)
+![image-20250219110520618](https://img.yurzi.net/api/assets/0c519991-d542-4071-8fcc-7226cc607acc/thumbnail?size=preview&key=l94E8RzXvFP3CDjfnQbfKDGLD6WNtHWZmjFJ1aZWoRO92FwyoyKyPaixIaM7-q4h0ME&c=%2FfcBBID2fDRkiHdqdXW7X6n6cg%3D%3D)
 
 ### 方向调研
 
