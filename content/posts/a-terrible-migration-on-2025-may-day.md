@@ -1,7 +1,7 @@
 ---
 title: '记一次噩梦般的五一服务迁移'
 date: "2025-05-07T09:54:05+08:00"
-lastmod: "2025-05-07T09:54:05+08:00"
+lastmod: "2025-06-13T15:30:00+08:00"
 author: ["Yurzi", "Lily"]
 description: "一段对于消失的五一假期的纪念"
 keywords:
@@ -18,11 +18,16 @@ tags:
 draft: false
 disableCounter: false
 #cover:
-#  image: ""
+#  image: "":
 #  caption: ""
 #  alt: ""
 #  relative: false
 ---
+
+> :warning: 警告
+>
+> 现在 Alist 存在供应链投毒攻击风险，若您之前使用了 Alist 请重置所有相关的账户的 Token！
+> 如果仍然想使用 Alist 可以使用 [OpenList](https://github.com/OpenListTeam/OpenList)
 
 ## 万恶之源
 
@@ -157,6 +162,11 @@ disableCounter: false
 
 ### 数据库配置
 
+> :bulb: 提示
+>
+> Immich 在 134.0版本后使用 VectorChord 作为向量数据库扩展
+> 相关迁移指南见 [Migrating to VectorChord](https://immich.app/docs/administration/postgres-standalone/#migrating-to-vectorchord)
+
 由于 Immich 需要进行向量相似度搜索，所以需要在postgresql中安装额外的扩展，
 对此，`immich-server` 会依赖一个 `pgvecto.rs-immich[-bin]` 的包，根据AUR的评论区建议安装
 `pgvecto.rs-immich-bin` 以使用 0.3.0 版本。
@@ -178,7 +188,7 @@ CREATE EXTENSION vectors;
 ```
 
 对于 Immich 来说，最好使用一个带有管理员权限的账户，因为一般的普通账户没有权限操作数据库的扩展，以及无法操作对应扩展的 schema。
-当然也可以通过给其相关授权的方法解决，但是需要多次尝试才能知道 Immich 需要哪些拓展和权限。
+当然也可以通过给其相关授权的方法解决，但是需要多次尝试才能知道 Immich 需要哪些拓展和权限，当然也可以查看[官方文档](https://immich.app/docs/administration/postgres-standalone/#without-superuser-permission)。
 
 ### 语义搜索和人脸识别
 
