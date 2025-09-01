@@ -1,7 +1,7 @@
 ---
 title: "Dot学习笔记"
 date: "2021-11-10T09:49:50+08:00"
-lastmod: "2024-03-27T20:41:50+08:00"
+lastmod: "2025-09-01T14:39:35+08:00"
 author: ["Yurzi", "Lily"]
 description: "记录了一些Dot语言中的一些知识点"
 keywords:
@@ -230,5 +230,5 @@ digraph structs {acyclic
 
 ## 参考文献
 
-{{<cite id="1" title="[1] Graphviz官方文档" url="https://graphviz.org/documentation/">}}
-{{<cite id="2" title="[2] dot语法总结 Code@浮生记." url="https://onlookerliu.github.io/2017/12/28/dot%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/#2-%E5%9B%BE%E7%9A%84%E5%A3%B0%E6%98%8E">}}
+[^1]: [Graphviz官方文档](https://graphviz.org/documentation/)
+[^2]: [dot语法总结 Code@浮生记](https://onlookerliu.github.io/2017/12/28/dot%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/#2-%E5%9B%BE%E7%9A%84%E5%A3%B0%E6%98%8E)

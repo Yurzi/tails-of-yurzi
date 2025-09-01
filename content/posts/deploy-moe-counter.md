@@ -1,7 +1,7 @@
 ---
 title: "萌萌计数器 Moe Counter"
 date: "2024-05-16T15:19:42+08:00"
-lastmod: "2024-05-16T15:19:42+08:00"
+lastmod: "2025-09-01T15:00:49+08:00"
 author: ["Yurzi", "Lily"]
 description: "如何将Moe Counter部署到自己的服务器上, 并集成进 Hugo 博客"
 keywords:
@@ -28,7 +28,7 @@ disableCounter: false
 ## 初遇
 
 由于经常在互联网的深海里刨东西，所以咱经常会找到一些个人网页或者开源项目里有几只兽耳娘举牌牌的图片，时常觉得可爱并且自己也想在博客里集成一个。
-但是由于不知道项目用途和名称，以及咱社恐不敢询问，直到最近才依据「蛛丝马迹」在 Github 上找到里该项目 —— Moe Counter {{<cref "1" "#cite-1">}}
+但是由于不知道项目用途和名称，以及咱社恐不敢询问，直到最近才依据「蛛丝马迹」在 Github 上找到里该项目 —— Moe Counter[^1]
 
 于是很快啊, 咱立刻就开始着手部署这个有趣的小工具了，但是在整个部署过程中确实遭遇了许多坎坷，着实让咱喝了一壶，于是在此记录。
 
@@ -41,16 +41,15 @@ disableCounter: false
 
 ## 部署原版 Moe Counter
 
-由于 Moe Counter 项目是有后端的，所以需要部署在一个服务器上，虽然在 Github 上也有大佬提供的白嫖Replit{{<cref "1" "#cite-1">}}、
-CloudFlare{{<cref "2" "#cite-2">}}{{<cref "3" "#cite-3">}}
-和Vercel{{<cref "4" "#cite-4">}} 的方案，但考虑到自己有着一些空闲机子的因素，于是决定自己部署。
+由于 Moe Counter 项目是有后端的，所以需要部署在一个服务器上，虽然在 Github 上也有大佬提供的白嫖Replit[^1]、
+CloudFlare[^2] [^3]和Vercel[^4]的方案，但考虑到自己有着一些空闲机子的因素，于是决定自己部署。
 
 首先咱的部署环境为 `Debian 12.5`，安装 `Nginx` 等内容不展开了，
 为了能应对未来较大字典查询的应用场景，决定使用 MongoDB 作为数据库后端。{{<spoiler>}}于是就因为过于自信而翻车XD{{</spoiler>}}
 
 ### 安装 MongoDB
 
-由于 MongoDB 一些众所周知的问题，Debian 的仓库里不再提供相关的软件包，所以只能参考官方自己给出的安装手册{{<cref 5 "#cite-5">}}进行安装了。
+由于 MongoDB 一些众所周知的问题，Debian 的仓库里不再提供相关的软件包，所以只能参考官方自己给出的安装手册[^5]进行安装了。
 
 ```shell
 # 前置依赖
@@ -114,7 +113,7 @@ sudo systemctl restart mongod
 
 ### 部署 Systemd 服务
 
-在机器上找个位置，例如 `/srv/Moe-Counter`，按照作者所说{{<cref "1" "#cite-1">}}来部署项目，由于Debian的官方仓库中 `yarn` 被更名为 `yarnpkg` 所以在使用 `apt` 安装时需要注意。
+在机器上找个位置，例如 `/srv/Moe-Counter`，按照作者所说[^1]来部署项目，由于Debian的官方仓库中 `yarn` 被更名为 `yarnpkg` 所以在使用 `apt` 安装时需要注意。
 
 同时为了方便管理和安全，个人将整个 Moe Counter 项目分配给 `www-data` 用户运行，同时使用systemd进行管理。
 
@@ -240,9 +239,9 @@ your-preferred-dir/
 
 ## 参考文献
 
-{{<cite 1 "[1] GitHub: journey-ad/Moe-Counter: 多种风格可选的萌萌计数器" "https://github.com/journey-ad/Moe-Counter">}}
-{{<cite 2 "[2] champhoon, moe-counter-cf：将萌萌计数器部署到 Cloudflare Workers" "https://champhoon.xyz/note/moe-counter-cf/">}}
-{{<cite 3 "[3] Shirakii, 将萌萌计数器部署到 Cloudflare Workers" "https://www.shirakii.com/post/moe-counter-cf/">}}
-{{<cite 4 "[4] Github: grbnb/moe-counter-vercel: vercel平台一键部署Moc-Counter" "https://github.com/grbnb/moe-counter-vercel">}}
-{{<cite 5 "[5] Install MongoDB Community Edition on Debian" "https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-debian/">}}
-{{<cite 3 "[6] Github: yurzi/moe-counter-rs: Rust实现的Moe-Counter" "https://github.com/Yurzi/moe-counter-rs">}}
+[^1]: [GitHub: journey-ad/Moe-Counter: 多种风格可选的萌萌计数器](https://github.com/journey-ad/Moe-Counter)
+[^2]: [champhoon, moe-counter-cf：将萌萌计数器部署到 Cloudflare Workers](https://champhoon.xyz/note/moe-counter-cf/)
+[^3]: [Shirakii, 将萌萌计数器部署到 Cloudflare Workers](https://www.shirakii.com/post/moe-counter-cf/)
+[^4]: [Github: grbnb/moe-counter-vercel: vercel平台一键部署Moc-Counter](https://github.com/grbnb/moe-counter-vercel)
+[^5]: [Install MongoDB Community Edition on Debian](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-debian/)
+[^6]: [Github: yurzi/moe-counter-rs: Rust实现的Moe-Counter](https://github.com/Yurzi/moe-counter-rs)

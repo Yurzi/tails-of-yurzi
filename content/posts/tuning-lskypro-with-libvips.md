@@ -1,7 +1,7 @@
 ---
 title: "使用libvips优化Lskypro的图片处理"
 date: "2024-03-28T20:30:31+08:00"
-lastmod: "2024-03-28T20:30:31+08:00"
+lastmod: "2025-09-01T15:06:36+08:00"
 author: ["Yurzi", "Lily"]
 description: "使用libvips优化Lskypro的图片处理，并做一些bug修复"
 keywords: [Lskypro, Tuning]
@@ -37,24 +37,24 @@ Lskypro 是基于 PHP Laravel 框架开发的，所以根据其MVC的设计模�
 
 ```php
 public function store(Request $request): Image {
-	$file = $request->file('file');
+  $file = $request->file('file');
    // ...
-   	// 图片处理
-  		$handleImage = InterventionImage::make($file)->save($format, $quality);
-  		$file = new UploadedFile($handleImage->basePath(), $filename, $handleImage->mime());
-  		// 水印
-  		$file = new UploadedFile($watermarkImage->basePath(), $file->getClientOriginalName(), $file->getMimeType());
+    // 图片处理
+      $handleImage = InterventionImage::make($file)->save($format, $quality);
+      $file = new UploadedFile($handleImage->basePath(), $filename, $handleImage->mime());
+      // 水印
+      $file = new UploadedFile($watermarkImage->basePath(), $file->getClientOriginalName(), $file->getMimeType());
    // ...
-  		// 存储图片
-  		$filesystem->writeStream($pathname, $handle);
-  	// ...
+      // 存储图片
+      $filesystem->writeStream($pathname, $handle);
+    // ...
    // 生成缩略图
    $this->makeThumbnail($image, $file);
 }
 
 public function makeThumbnail(Image $image, mixed $data, int $max = 400, bool $force = false): void {
 //...
-	$img = InterventionImage::make($data);
+  $img = InterventionImage::make($data);
    $img->fit($width, $height, fn($constraint) => $constraint->upsize())->encode('png', 60)->save($pathname);
 //...
 }
@@ -91,13 +91,13 @@ public function makeThumbnail(Image $image, mixed $data, int $max = 400, bool $f
 于是咱注意到在 Github 的 issue 里有人提到了因为内存不足而导致的图片上传失败，
 同时结合作者在处理缩略图调大了脚本的运行内存限制和咱上传时虽然失败但仍成功上传了图片的表现来看，
 应该是在处理缩略图的时候出现了异常。咱意识到缩略图处理可能是非常消耗性能的。
-于是在网上搜素相关的内容，发现确实有人指出了这种问题{{<cref 1 "#cite-1">}}。
+于是在网上搜素相关的内容，发现确实有人指出了这种问题[^1]
 而且非常不巧的是，这个图床的实现也是使用的 ImageMagick。
 
 于是经过简单的思考，和利弊权衡，以及考虑到自己几乎没有的 PHP 编程经验，
 咱决定使用 `libvips` 来优化 ~~（劣化~~ 这块图片处理的逻辑。
 
-首先是轮子的选用，经过简单的搜索很容易就可以找到`php-vips`{{<cref 2 "#cite-2">}} 这个库。
+首先是轮子的选用，经过简单的搜索很容易就可以找到`php-vips`[^2]这个库。
 在开发环境里装上`php-vips`，将相关的图片处理的逻辑代码改为以下内容。
 
 首先是图片格式转换，这里存在的一个问题是如果用户使用了webp作为目标格式而图片大小过大，就会导致保存失败，
@@ -106,22 +106,22 @@ public function makeThumbnail(Image $image, mixed $data, int $max = 400, bool $f
 
 ```php
 // 获取拓展名，判断是否需要转换
-	                  $format = $format ?: $extension;
-	                  $filename = Str::replaceLast($extension, $format, $file->getClientOriginalName());
-	                  $is_success = true;
-	                  try {
-	                      $handleImage = VipsImage::newFromFile($file, ['access' => 'sequential']);
-	                      $handleImage->writeToFile($filename, ["Q" => $quality]);
-	                  } catch (\Throwable $e) {
-	                      // 或许目标格式不合适，回落到原图
-	                      unlink($filename);
-	                      $is_success = false;
-	                  }
-	                  if ($is_success) {
-	                      $file = new UploadedFile($filename, $filename, mime_content_type($filename));
-	                      // 重新设置拓展名
-	                      $extension = $format;
-	                  }
+                    $format = $format ?: $extension;
+                    $filename = Str::replaceLast($extension, $format, $file->getClientOriginalName());
+                    $is_success = true;
+                    try {
+                        $handleImage = VipsImage::newFromFile($file, ['access' => 'sequential']);
+                        $handleImage->writeToFile($filename, ["Q" => $quality]);
+                    } catch (\Throwable $e) {
+                        // 或许目标格式不合适，回落到原图
+                        unlink($filename);
+                        $is_success = false;
+                    }
+                    if ($is_success) {
+                        $file = new UploadedFile($filename, $filename, mime_content_type($filename));
+                        // 重新设置拓展名
+                        $extension = $format;
+                    }
 ```
 
 然后是重量级的缩略图生成的逻辑，改为如下内容。这里使用了 webp 来作为缩略图格式，似乎相较于原来的 png 来说更好一些，
@@ -149,14 +149,14 @@ $img->webpsave($pathname);
 ## 总结
 
 至此对于 Lskypro 的 bug 修复和性能调优就结束了，咱也收获了一个更好用的图床，
-也能轻松的完成大佬文中提到的高分辨率图片的挑战{{<cref 1 "#cite-1">}}。
+也能轻松的完成大佬文中提到的高分辨率图片的挑战[^1]。
 不过这对于自己这个 PHP 零基础的杂鱼来说还是太累了。同时也对国内的一些开源项目的代码质量感到担忧和对国内开源环境的现状感到担忧。
 
 为什么不提交PR？这主要是出于咱的某种社恐，毕竟这些代码是对 PHP 零基础的小白写出来的，非常的丑陋。
-此外是咱观原项目的活跃状态似乎是有些难以处理PR的状态了😅。于是咱还是自己 fork 了一份来用{{<cref 3 "#cite-3">}}。
+此外是咱观原项目的活跃状态似乎是有些难以处理PR的状态了😅。于是咱还是自己 fork 了一份来用[^3]。
 
 ## 参考文献
 
-{{<cite 1 "[1] 记一次 ImageMagick jpeg 缩放性能调优" "https://tomwei7.com/2020/10/11/imagemagick-tuning/">}}
-{{<cite 2 "[2] php-vips" "https://github.com/libvips/php-vips">}}
-{{<cite 3 "[3] Lskypro: Yurzi favor" "https://github.com/Yurzi/lsky-pro/tree/yurzi-favor">}}
+[^1]: [记一次 ImageMagick jpeg 缩放性能调优](https://tomwei7.com/2020/10/11/imagemagick-tuning/)
+[^2]: [php-vips](https://github.com/libvips/php-vips)
+[^3]: [Lskypro: Yurzi favor](https://github.com/Yurzi/lsky-pro/tree/yurzi-favor)

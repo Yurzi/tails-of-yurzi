@@ -1,7 +1,7 @@
 ---
 title: "Deepseek for Research?"
 date: "2025-02-28T15:06:47+08:00"
-lastmod: "2025-02-28T15:06:47+08:00"
+lastmod: "2025-09-01T14:54:29+08:00"
 author: ["Lily"]
 description: "对于 DeepSeek 的简单了解和探索"
 keywords:
@@ -159,6 +159,5 @@ DeepSeek-R1在传统自回归预测基础上引入因果稀疏注意力机制，
 此外现有的 LLM 模型均为权重固定的模型，而科研界的信息则是在不断迭代。LLM 对于领域特定知识形成的经验会很快的过时，从而使得微调来构建科研大模型存在工程上的挑战。而使用 RAG 方法对模型能力进行扩展，一方面受限于模型本身的性能，一方面还受限于 RAG 算法的性能，此外现今并无一个统一接口的学术信息数据库，使得自动化检索学术信息的实现成本很高，这也不利于相关场景解决方案的发展。
 ## References
 
-{{<cite "1" "[1] DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning" "https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf">}}
-
-{{<cite "2" "[2] Understanding Reasoning LLMs" "https://magazine.sebastianraschka.com/p/understanding-reasoning-llms">}}
+[^1]: [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf)
+[^2]: [Understanding Reasoning LLMs](https://magazine.sebastianraschka.com/p/understanding-reasoning-llms)

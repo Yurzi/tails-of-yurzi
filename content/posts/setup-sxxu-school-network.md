@@ -1,7 +1,7 @@
 ---
 title: "在Linux上设置某大学的校园网"
 date: "2024-10-14T17:09:35+08:00"
-lastmod: "2024-10-14T17:09:35+08:00"
+lastmod: "2025-09-01T14:39:35+08:00"
 author: ["Yurzi", "Lily"]
 description: "记录如何在Linux设备上设置某大学的校园网"
 keywords:
@@ -37,15 +37,15 @@ disableCounter: false
 考虑到这破大学似乎有着非常完善的网络服务流程，于是咱在某位E人的撺掇下，决定致信网络服务中心以表明 Linux 平台难以使用校园网的困境，并期望获得一个官方的解决方案。
 但最终的只得到了一个 Oracle：「存在一个第三方客户端可以用于校园网的认证并被网络中心允许使用」。
 
-于是通过在著名交友社区 「Gayhub」上简单的检索就可以发现有一个名叫 「mentohust」{{<cref 1>}}项目能够处理锐捷认证同时支持 v4 算法，但经过测试之后发现其在咱所处破落学校之网络环境下，水土不服无法运行。
+于是通过在著名交友社区 「Gayhub」上简单的检索就可以发现有一个名叫 「mentohust」[^1]项目能够处理锐捷认证同时支持 v4 算法，但经过测试之后发现其在咱所处破落学校之网络环境下，水土不服无法运行。
 
-但好在该工具的维护者于 README 中推荐了另一个工具「minieap」{{<cref 2>}}，遂继续尝试，发现该工具可以认证成功，但是似乎无法保活，并给出报错信息「在 4 状态已经停留了 3 次，达到指定次数，正在退出……」。
+但好在该工具的维护者于 README 中推荐了另一个工具「minieap」[^2]，遂继续尝试，发现该工具可以认证成功，但是似乎无法保活，并给出报错信息「在 4 状态已经停留了 3 次，达到指定次数，正在退出……」。
 
 于是乎，现在的挑战就在于如何使用 minieap 实现保活。
 
 ## 实现保活
 
-通过围绕报错信息进行检索，在 minieap 项目中的一个 issue {{<cref 3>}} 启发了咱，通过观察日志，发现咱这学校也似乎确实是使用认证信息进行心跳的，遂修改 minieap 源码：
+通过围绕报错信息进行检索，在 minieap 项目中的一个 issue [^3] 启发了咱，通过观察日志，发现咱这学校也似乎确实是使用认证信息进行心跳的，遂修改 minieap 源码：
 
 ```c
  338   │     if (PRIV->state == EAP_STATE_IDENTITY_SENT) {
@@ -78,6 +78,6 @@ disableCounter: false
 
 ## References
 
-{{<cite 1 "[1] Github: mentohust: mentohust加入v4支持" "https://github.com/hyrathb/mentohust">}}
-{{<cite 2 "[2] Github: minieap: 可扩展的 802.1x 客户端，带有锐捷 v3 (v4) 算法插件支持" "https://github.com/updateing/minieap">}}
-{{<cite 3 "[3] GIthubIssue: minieap: #83 能认证成功，但无法心跳" "https://github.com/updateing/minieap/issues/83#issuecomment-2323197143">}}
+[^1]: [Github: mentohust: mentohust加入v4支持](https://github.com/hyrathb/mentohust)
+[^2]: "[Github: minieap: 可扩展的 802.1x 客户端，带有锐捷 v3 (v4) 算法插件支持](https://github.com/updateing/minieap)
+[^3]: [GIthubIssue: minieap: #83 能认证成功，但无法心跳](https://github.com/updateing/minieap/issues/83#issuecomment-2323197143)

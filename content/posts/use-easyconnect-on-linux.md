@@ -1,7 +1,7 @@
 ---
 title: '在 Linux 上使用 Easyconnect'
 date: "2025-02-16T17:09:38+08:00"
-lastmod: "2025-02-16T17:09:38+08:00"
+lastmod: "2025-09-01T15:11:21+08:00"
 author: ["Yurzi"]
 description: "介绍如何在 Linux 上使用 Easyconnect"
 keywords:
@@ -39,7 +39,7 @@ disableCounter: false
 
 于是乎顺着将未知的东西隔离起来的思想，
 在互联网上一番简单的搜索之后，
-找到了 Docker Easyconnect 项目 {{<cref "1" "#cite-1">}}。于是将咱如何使用这个项目的经历记录如下。
+找到了 Docker Easyconnect 项目 [^1]。于是将咱如何使用这个项目的经历记录如下。
 
 ## 使用 Docker 运行 Easyconnect
 
@@ -70,4 +70,4 @@ hagb/docker-easyconnect:7.6.3
 
 ## References
 
-{{<cite 1 "[1]: Github: docker-easyconnect/docker-easyconnect" "https://github.com/docker-easyconnect/docker-easyconnect">}}
+[^1]: [Github: docker-easyconnect/docker-easyconnect](https://github.com/docker-easyconnect/docker-easyconnect)

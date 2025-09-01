@@ -1,7 +1,7 @@
 ---
 title: "使用Rsync来发布Hugo博客"
 date: "2024-03-28T16:53:00+08:00"
-lastmod: "2024-03-28T16:53:00+08:00"
+lastmod: "2025-09-01T14:42:16+08:00"
 author: ["Yurzi", "Lily"]
 description: "使用Rsync将博客自动发布到远程服务器"
 keywords:
@@ -23,12 +23,12 @@ draft: false
 ---
 
 经历了一番大折腾之后，咱终于成功的将博客从 Typecho 迁移到了 Hugo，但是受限于 Hugo 静态博客的特性，咱无法实时编辑博客哩:triumph:，
-于是只能探索一下如何能快捷的将博客同步到服务器上去了，不过好在 Hugo 的文档给出了一些方案{{<cref 1 "#cite-1">}}。
+于是只能探索一下如何能快捷的将博客同步到服务器上去了，不过好在 Hugo 的文档给出了一些方案[^1]。
 在简单浏览之后决定选择使用 `rsync` 的方式。
 
 ## 简单用法
 
-虽然在很早之前就了解到了 `rsync` 但是并没有实际的用过，在简单查阅了ArchWiki{{<cref 2 "#cite-2">}}上相关的内容之后，并结合 `rsync` 自己的 help 输出之后
+虽然在很早之前就了解到了 `rsync` 但是并没有实际的用过，在简单查阅了ArchWiki[^2]上相关的内容之后，并结合 `rsync` 自己的 help 输出之后
 咱总结出只需要在 Hugo 的工作目录使用下面的命令就能将内容上传到远程了。
 
 ```sh
@@ -109,5 +109,5 @@ rsync -avuz --progress --password-file=<your_passwd_file> --delete public/ <auth
 
 ## 参考文献
 
-{{<cite 1 "[1] Hugo: Hosting and deployment" "https://gohugo.io/hosting-and-deployment/">}}
-{{<cite 2 "[2] ArchWiki: rsync" "https://wiki.archlinux.org/title/Rsync">}}
+[^1]: [Hugo: Hosting and deployment](https://gohugo.io/hosting-and-deployment/)
+[^2]: [ArchWiki: rsync](https://wiki.archlinux.org/title/Rsync)

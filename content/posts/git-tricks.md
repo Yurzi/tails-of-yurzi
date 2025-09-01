@@ -1,7 +1,7 @@
 ---
 title: 'Git Tricks'
 date: "2025-01-16T16:52:38+08:00"
-lastmod: "2025-01-16T16:52:38+08:00"
+lastmod: "2025-09-01T15:02:39+08:00"
 author: ["Yurzi", "Lily"]
 description: "一些 Git 使用的小技巧"
 keywords:
@@ -34,7 +34,7 @@ Git 总能凭借其丰富的功能满足咱的需求。在这些技巧中不乏�
 所以仔细想想，这种处理文件差异的任务使用 Git 不是正好吗？
 
 使用 Git Bare Repository 可以很好的解决这个问题，
-这个方案的最早来源是「Git Bare Repository - A Better Way To Manage Dotfiles」{{<cref 1 "#cite-1">}}。
+这个方案的最早来源是「Git Bare Repository - A Better Way To Manage Dotfiles」[^1]
 
 使用这个方案只需要简单的三步：
 
@@ -142,4 +142,4 @@ git clone ./bare_repo local_repo2
 
 ## References
 
-{{<cite 1 "[1] Yutube: Git Bare Repository - A Better Way To Manage Dotfiles" "https://www.youtube.com/watch?v=tBoLDpTWVOM">}}
+[^1]: [Yutube: Git Bare Repository - A Better Way To Manage Dotfiles](https://www.youtube.com/watch?v=tBoLDpTWVOM)

@@ -1,7 +1,7 @@
 ---
 title: '为博客实现加密功能'
 date: "2025-02-13T16:03:58+08:00"
-lastmod: "2025-02-13T16:03:58+08:00"
+lastmod: "2025-09-01T14:54:29+08:00"
 author: ["Yurzi"]
 description: "通过简单的方式为Hugo博客实现加密功能"
 keywords:
@@ -163,7 +163,7 @@ function decrypt_encryped_content(button) {
 同时对于初始化向量的选择没有任何头绪。
 
 于是在一番网上的调查后，
-发现这篇文章{{<cref "1" "#cite-1">}}中讲到了如何多语言兼容 CryptoJS 的 AES 的加解密算法。
+发现这篇文章[^1]中讲到了如何多语言兼容 CryptoJS 的 AES 的加解密算法。
 遂有下面的 Python 实现的加密算法。
 顺带展现一下加密功能的实现，{{<spoiler>}}口令：ciallo{{</spoiler>}}。
 
@@ -273,4 +273,4 @@ if __name__ == "__main__":
 
 ## References
 
-{{<cite "1" "[1] 前后端对接，多语言实现 CryptoJS 的 AES 简单加密解密" "https://juejin.cn/post/7365785904704798774">}}
+[^1]: [前后端对接，多语言实现 CryptoJS 的 AES 简单加密解密](https://juejin.cn/post/7365785904704798774)

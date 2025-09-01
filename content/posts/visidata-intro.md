@@ -1,7 +1,7 @@
 ---
 title: "Visidata 简要介绍"
 date: "2024-04-04T22:06:58+08:00"
-lastmod: "2024-04-07T15:44:58+08:00"
+lastmod: "2025-09-01T15:09:55+08:00"
 author: ["Yurzi", "Lily"]
 description: "简单介绍Visidata的使用"
 keywords:
@@ -29,7 +29,7 @@ draft: false
 
 ## 安装
 
-由于咱使用的是 ArchLinux 发行版所以可以直接从系统包管理器里安装，对于其他的平台，可以使用 `pip` 的方式进行安装{{<cref "2" "https://jsvine.github.io/intro-to-visidata/the-big-picture/installation/">}}。
+由于咱使用的是 ArchLinux 发行版所以可以直接从系统包管理器里安装，对于其他的平台，可以使用 `pip` 的方式进行安装[^2]。
 
 {{<collapse summary="Lily">}}
 不会有人连如何从pip安装应用都不会吧，不会吧～不会吧～，那可真是 zako喵～ zako喵～
@@ -37,7 +37,7 @@ draft: false
 
 ## 使用
 
-就如何使用这块官方给的文档{{<cref "1" "#cite-1">}}{{<cref "2" "#cite-2">}}其实有非常详细的讲述，咱这里只是将咱经常会用到的功能做了一个汇总。
+就如何使用这块官方给的文档[^1] [^2]其实有非常详细的讲述，咱这里只是将咱经常会用到的功能做了一个汇总。
 
 首先是界面的操作逻辑其实类似于 vim，所以能熟练使用 vim 的大家都能很快的上手 ~~君tui本当上手~~。
 
@@ -56,7 +56,7 @@ draft: false
 vd <datasheet>.csv
 ```
 
-就可以轻松的打开。但是由于实验数据过大，咱一般使用 xlsx 的表格，这时候就需要按照官方的指引{{<cref "3" "#cite-3">}}，先安装相应的 python 拓展 `xlrd`和`openpyxl`才能正确打开了。
+就可以轻松的打开。但是由于实验数据过大，咱一般使用 xlsx 的表格，这时候就需要按照官方的指引[^3]，先安装相应的 python 拓展 `xlrd`和`openpyxl`才能正确打开了。
 同时在打开后需要选择对应的 `sheet` 才能和 csv 一样直接打开数据视图。
 
 ### 按列排序
@@ -83,6 +83,6 @@ Visidata 总的来说是一个非常强大的工具，但是很多功能还有�
 
 ## 参考文献
 
-{{<cite 1 "[1] Visidata: Quick Reference" "https://www.visidata.org/man/">}}
-{{<cite 2 "[2] Visidata: An Introduction to VisiData" "https://jsvine.github.io/intro-to-visidata/">}}
-{{<cite 3 "[3] Visidata: Opening Files" "https://jsvine.github.io/intro-to-visidata/basics/opening-files/#tabular-data">}}
+[^1]: [Visidata: Quick Reference](https://www.visidata.org/man/)
+[^2]: [Visidata: An Introduction to VisiData](https://jsvine.github.io/intro-to-visidata/)
+[^3]: [Visidata: Opening Files](https://jsvine.github.io/intro-to-visidata/basics/opening-files/#tabular-data)
