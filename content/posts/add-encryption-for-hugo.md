@@ -1,9 +1,10 @@
 ---
-title: '为博客实现加密功能'
-date: "2025-02-13T16:03:58+08:00"
-lastmod: "2025-09-01T14:54:29+08:00"
-author: ["Yurzi"]
-description: "通过简单的方式为Hugo博客实现加密功能"
+title: 为博客实现加密功能
+date: 2025-02-13T16:03:58+08:00
+lastmod: 2025-11-17T06:44:00+08:00
+author:
+  - Yurzi
+description: 通过简单的方式为Hugo博客实现加密功能
 keywords:
   - Blog
   - Encryption
@@ -11,17 +12,8 @@ keywords:
 tags:
   - Blog
   - Hugo
-# series:
-# math: true
-# mermaid: true
 draft: false
 disableCounter: false
-
-#cover:
-#  image: ""
-#  caption: ""
-#  alt: ""
-#  relative: false
 ---
 
 ## 风云变换
