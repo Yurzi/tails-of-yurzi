@@ -15,6 +15,7 @@ tags:
   - Image
   - Hugo
   - Linux
+  - Tools
 draft: false
 disableCounter: false
 ---
