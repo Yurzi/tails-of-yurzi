@@ -1,6 +1,6 @@
 baseURL: https://blog.yurzi.net/
 title: 玖只的尾巴
-languageCode: zh
+locale: zh
 hasCJKLanguage: true
 pagination:
   pagerSize: 5
@@ -22,8 +22,8 @@ minify:
 defaultContentLanguage: zh
 languages:
   zh:
-    languageName: 简体中文
-    languageCode: zh
+    label: 简体中文
+    locale: zh
     title: 玖只的尾巴
     weight: 1
     taxonomies:
@@ -65,8 +65,8 @@ languages:
           weight: 12
 
   en:
-    languageName: "English"
-    languageCode: en
+    label: "English"
+    locale: en
     title: "Tails of Yurzi"
     weight: 2
     taxonomies:
@@ -119,6 +119,15 @@ params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   description: "有毛绒绒的奇妙领域"
   author: ["Yurzi", "Lily"]
+
+  homeInfoParams:
+    Title: "Ciallo～(∠・ω< )⌒★"
+    Content: >
+      👋 欢迎来到 **玖只的尾巴**!
+
+      - 这里有着一些毛茸茸的东西，包括但不限于知识、猫猫、尾巴等
+
+      - 本站所有内容以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议共享
 
   beian: 浙ICP备2021036092号
 
@@ -247,3 +256,12 @@ services:
     disableInlineCSS: true
   disqus:
     shortname: tails-of-yurzi
+
+security:
+  http:
+    urls:
+      - 'https://cdn\.jsdelivr\.net/.*'
+    mediaTypes:
+      - 'application/javascript'
+      - 'application/ecmascript'
+      - 'text/javascript'

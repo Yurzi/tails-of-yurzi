@@ -10,7 +10,6 @@ lastmod: "2024-04-02T15:04:46+08:00"
 ## 好友
 
 {{<friendLink logo="https://blog.kimiblock.top/img/Logo.webp" title="Kimiblock's Blog" word="Who host kimiblock.top." url="https://blog.kimiblock.top/">}}
-{{<friendLink logo="https://lab.gb0.dev/img/avatar.png" title="/var/log/gblab" word="此处会不定时产生包含大量废话的日志文件" url="https://lab.gb0.dev/">}}
+{{<friendLink logo="https://assets.yurzi.net/2026/05/8fdb32ade667eab6-gblab-avatar.webp" title="/var/log/gblab" word="此处会不定时产生包含大量废话的日志文件" url="https://lab.gb0.dev/">}}
 {{<friendLink logo="https://shadowrz.github.io/assets/avatar.png" title="ShadowRZ's Blog" word="Where something happens." url="https://shadowrz.github.io/blog/">}}
 {{<friendLink logo="http://q1.qlogo.cn/g?b=qq&nk=1255342403&s=640" title="OceanPresent" word="Can you hear me?" url="https://oceanpresent.art/">}}
-
