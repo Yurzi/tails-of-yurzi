@@ -29,6 +29,13 @@ languages:
     taxonomies:
       tag: tags
       series: series
+    params:
+      homeInfoParams:
+        Title: "Ciallo～(∠・ω< )⌒★"
+        Content: >
+          👋 欢迎来到 **玖只的尾巴**! <br/>
+          这里有着一些毛茸茸的东西，包括但不限于知识、猫猫、尾巴等~<br/>
+          本站所有内容以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议共享。
     menu:
       main:
         - identifier: search
@@ -72,6 +79,13 @@ languages:
     taxonomies:
       tag: tags
       series: series
+    params:
+      homeInfoParams:
+        Title: "Ciallo～(∠・ω< )⌒★"
+        Content: >
+          👋 Welcome to **Tails of Yurzi**! <br/>
+          Here you will find a fluffy assortment of things, including but not limited to knowledge, cats, and tails of all sorts.<br/>
+          All content on this site is shared under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en) license.
     menu:
       main:
         - identifier: search
@@ -107,8 +121,6 @@ languages:
           url: about
           weight: 12
 
-    # custom params for each language should be under [langcode].parms - hugo v0.120.0
-
 outputs:
   home:
     - HTML
@@ -119,15 +131,6 @@ params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   description: "有毛绒绒的奇妙领域"
   author: ["Yurzi", "Lily"]
-
-  homeInfoParams:
-    Title: "Ciallo～(∠・ω< )⌒★"
-    Content: >
-      👋 欢迎来到 **玖只的尾巴**!
-
-      - 这里有着一些毛茸茸的东西，包括但不限于知识、猫猫、尾巴等
-
-      - 本站所有内容以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议共享
 
   beian: 浙ICP备2021036092号
 
