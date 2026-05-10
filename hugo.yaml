@@ -36,6 +36,10 @@ languages:
           👋 欢迎来到 **玖只的尾巴**! <br/>
           这里有着一些毛茸茸的东西，包括但不限于知识、猫猫、尾巴等~<br/>
           本站所有内容以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议共享。
+        Counter:
+          Id: 玖只的尾巴
+          Theme: moebooru
+          Align: center
     menu:
       main:
         - identifier: search
@@ -86,6 +90,10 @@ languages:
           👋 Welcome to **Tails of Yurzi**! <br/>
           Here you will find a fluffy assortment of things, including but not limited to knowledge, cats, and tails of all sorts.<br/>
           All content on this site is shared under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en) license.
+        Counter:
+          Id: tails-of-yurzi
+          Theme: moebooru
+          Align: center
     menu:
       main:
         - identifier: search
