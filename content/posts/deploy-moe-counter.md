@@ -138,16 +138,25 @@ WantedBy=multi-user.target
 
 最后将Nginx的反向代理配置好，一个萌萌计数器就可以使用啦！下面的是 Demo 展示:
 **meobooru**
-{{<moe-counter "demo" "meobooru">}}
+<div style="align-items: center; display: flex; justify-content: {{ $align }}">
+  <img src="https://count.yurzi.net/demo?theme=meobooru" alt="demo-counter" />
+</div>
 
 **asoul**
-{{<moe-counter "demo" "asoul">}}
+<div style="align-items: center; display: flex; justify-content: {{ $align }}">
+  <img src="https://count.yurzi.net/demo?theme=asoul" alt="demo-counter" />
+</div>
 
 **rule34**
 {{<moe-counter "demo" "rule34">}}
+<div style="align-items: center; display: flex; justify-content: {{ $align }}">
+  <img src="https://count.yurzi.net/demo?theme=rule34" alt="demo-counter" />
+</div>
 
 **gelbooru**
-{{<moe-counter "demo" "gelbooru">}}
+<div style="align-items: center; display: flex; justify-content: {{ $align }}">
+  <img src="https://count.yurzi.net/demo?theme=gelbooru" alt="demo-counter" />
+</div>
 
 ## 部署 Moe Counter Rs
 
@@ -244,4 +253,3 @@ your-preferred-dir/
 [^3]: [Shirakii, 将萌萌计数器部署到 Cloudflare Workers](https://www.shirakii.com/post/moe-counter-cf/)
 [^4]: [Github: grbnb/moe-counter-vercel: vercel平台一键部署Moc-Counter](https://github.com/grbnb/moe-counter-vercel)
 [^5]: [Install MongoDB Community Edition on Debian](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-debian/)
-[^6]: [Github: yurzi/moe-counter-rs: Rust实现的Moe-Counter](https://github.com/Yurzi/moe-counter-rs)
