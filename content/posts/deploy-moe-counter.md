@@ -148,7 +148,6 @@ WantedBy=multi-user.target
 </div>
 
 **rule34**
-{{<moe-counter "demo" "rule34">}}
 <div style="align-items: center; display: flex; justify-content: {{ $align }}">
   <img src="https://count.yurzi.net/demo?theme=rule34" alt="demo-counter" />
 </div>
