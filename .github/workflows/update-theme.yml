@@ -1,0 +1,66 @@
+name: Update PaperMod
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-theme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24.x"
+
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.164.0"
+          extended: true
+
+      - name: Get latest theme SHA
+        id: theme
+        run: |
+          sha="$(git ls-remote https://github.com/yurzi/hugo-PaperMod.git refs/heads/yurzi-flavor-v2 | awk '{print $1}')"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+
+      - name: Check for update
+        id: check
+        run: |
+          latest="${{ steps.theme.outputs.sha }}"
+          latest_short="${latest:0:12}"
+          current="$(go list -m -f '{{.Version}}' github.com/yurzi/hugo-PaperMod)"
+          current_sha="${current##*-}"
+          echo "current=$current_sha"
+          echo "latest=$latest_short"
+          if [ "$current_sha" = "$latest_short" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update dependency
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          go get github.com/yurzi/hugo-PaperMod@${{ steps.theme.outputs.sha }}
+          go mod download github.com/yurzi/hugo-PaperMod
+
+      - name: Build
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          hugo mod graph
+          hugo --gc
+
+      - name: Commit update
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add go.mod go.sum
+          git commit -m "chore: update Hugo PaperMod theme to ${{ steps.theme.outputs.sha }}"
+          git push
